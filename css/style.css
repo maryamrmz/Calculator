@@ -165,7 +165,7 @@ nav .close:hover {
 	}
 	.main {
 		width: 80%;
-		height: 64%;
+		height: 60%;
 		font-size: 20px;
 	}
 	.row {
@@ -195,7 +195,7 @@ nav .close:hover {
 @media screen and (min-width: 800px) {
 	.main {
 		width: 80%;
-		height: 64%;
+		height: 60%;
 		display: flex;
 		flex-direction: row;
 		font-size: 22px;
@@ -250,6 +250,7 @@ nav .close:hover {
 
 .result p.number {
 	font-size: 40px;
+	margin-top: 3%;
 }
 
 .result p.text {
