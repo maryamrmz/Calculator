@@ -1,37 +1,51 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
 a,
 li,
 ul {
 	list-style: none;
 	text-decoration: none;
 }
+
+html,
+body {
+	height: 100%;
+}
+
 body {
 	background-color: gainsboro;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16px;
-	height: 1vw;
+}
+
+.container {
+	height: 100%;
 }
 
 .navbar {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	height: 1vw;
+	height: 4%;
 }
 
 nav {
 	display: flex;
-	width: 12%;
 	justify-content: space-around;
+	width: 10%;
 }
 
 nav img {
-	width: 10px;
+	width: 20%;
 	height: 10px;
 }
 
 nav .img {
 	display: flex;
-	width: 50px;
+	width: 50%;
 	height: 30px;
 	justify-content: center;
 	align-items: center;
@@ -51,6 +65,7 @@ nav .close:hover {
 	justify-content: space-between;
 	flex-direction: row;
 	margin-top: 8px;
+	height: 16%;
 }
 
 .menu .nav {
@@ -73,7 +88,7 @@ nav .close:hover {
 }
 
 .menu .list {
-	margin-right: 70px;
+	margin-right: 20%;
 }
 
 .menu .list ul {
@@ -97,9 +112,19 @@ nav .close:hover {
 .content {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: baseline;
 	width: 40%;
+	height: 8%;
+}
+
+.content div {
+	height: 100%;
+	width: 10%;
+	font-weight: bolder;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .content div:hover {
@@ -131,42 +156,53 @@ nav .close:hover {
 	.row .screen {
 		display: none;
 	}
+	.content {
+		justify-content: space-between;
+		width: 60%;
+	}
+	.content div {
+		width: 14%;
+	}
 	.main {
 		width: 80%;
-		height: 100%;
+		height: 64%;
 		font-size: 20px;
 	}
 	.row {
 		display: flex;
+		height: 20%;
+		width: 100%;
 	}
 	.row div {
 		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 		background-color: #efefef;
-		padding: 12px 40px;
 		font-weight: bolder;
 		margin: 1px;
-		width: 2%;
-		height: 30px;
+		width: 20%;
+		height: 97%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
-	.content div {
-		padding: 12px 24px;
-		font-weight: bolder;
+	.big-screen-row {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
 	}
 }
 
 @media screen and (min-width: 800px) {
 	.main {
 		width: 80%;
-		height: 100%;
+		height: 64%;
 		display: flex;
 		flex-direction: row;
 		font-size: 22px;
 	}
 	.row {
 		display: flex;
+		height: 100%;
 	}
 	.big-screen {
 		display: flex;
@@ -177,14 +213,14 @@ nav .close:hover {
 		display: flex;
 		flex-direction: column;
 		width: 80%;
+		height: 100%;
 	}
 	.row div {
 		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 		background-color: #efefef;
-		padding: 12px 20px;
 		font-weight: bolder;
 		margin: 1px;
-		height: 30px;
+		height: 98%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -192,18 +228,13 @@ nav .close:hover {
 	.big-screen-row .row div {
 		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 		background-color: #efefef;
-		padding: 12px 20px;
 		font-weight: bolder;
 		margin: 1px;
 		width: 20%;
-		height: 30px;
+		height: 97%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-	}
-	.content div {
-		padding: 12px 20px;
-		font-weight: bolder;
 	}
 }
 
@@ -214,7 +245,7 @@ nav .close:hover {
 .result {
 	direction: rtl;
 	display: flex;
-	margin-right: 70px;
+	margin-right: 20%;
 }
 
 .result p.number {
