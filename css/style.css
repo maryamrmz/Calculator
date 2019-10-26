@@ -151,8 +151,6 @@ nav .close:hover {
 
 .last {
 	width: 100%;
-	position: sticky;
-	bottom: 0;
 }
 
 .content {
@@ -201,8 +199,6 @@ nav .close:hover {
 
 .main {
 	opacity: 0.8;
-	position: sticky;
-	bottom: 0;
 	height: 92%;
 }
 
