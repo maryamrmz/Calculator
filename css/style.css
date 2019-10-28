@@ -147,6 +147,7 @@ nav .close:hover {
 
 .menu .history-icon img {
 	width: 25%;
+	min-width: 24px;
 }
 
 .list {
