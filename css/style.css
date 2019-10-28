@@ -188,6 +188,8 @@ nav .close:hover {
 	align-items: baseline;
 	width: 40%;
 	height: 8%;
+	position: absolute;
+	top: 15%;
 }
 
 .content div {
@@ -211,6 +213,10 @@ nav .close:hover {
 .main {
 	font-family: inherit;
 	width: 100%;
+	opacity: 0.8;
+	height: 77%;
+	position: absolute;
+	bottom: 0;
 }
 
 .blue:hover {
@@ -223,13 +229,6 @@ nav .close:hover {
 
 .big-screen-row .row div:hover {
 	background-color: rgb(189, 189, 189);
-}
-
-.main {
-	opacity: 0.8;
-	height: 77%;
-	position: absolute;
-	bottom: 0;
 }
 
 .main div.number:hover {
