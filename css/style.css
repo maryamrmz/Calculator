@@ -362,6 +362,10 @@ sup {
 		display: block;
 	}
 
+	.left-column {
+		margin-right: 1%;
+	}
+
 	.row .screen,
 	.menu .history-icon {
 		display: none;
@@ -418,6 +422,10 @@ sup {
 	.right-column,
 	.row .screen {
 		display: block;
+	}
+
+	.left-column {
+		margin-right: 1%;
 	}
 
 	.menu .history-icon {
@@ -487,7 +495,7 @@ sup {
 
 .result {
 	direction: rtl;
-	margin-top: 5%;
+	margin-top: 2%;
 	height: 10%;
 	width: 100%;
 }
