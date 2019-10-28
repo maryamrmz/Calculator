@@ -16,7 +16,7 @@ ul {
 }
 
 html {
-	height: 94%;
+	height: 100%;
 }
 
 body {
@@ -33,8 +33,14 @@ body {
 	align-items: center;
 }
 
+.first p {
+	font-size: 12px;
+	font-weight: bold;
+}
+
 .container {
-	height: 100%;
+	height: calc(100% - 30px);
+	min-height: 450px;
 	display: flex;
 	flex-direction: row;
 }
@@ -49,8 +55,8 @@ body {
 .left-column {
 	width: 100%;
 	flex: 80%;
-	height: 100%;
 	margin-right: 2%;
+	position: relative;
 }
 
 .left-column h5 {
@@ -110,7 +116,7 @@ nav .close:hover {
 	justify-content: space-between;
 	flex-direction: row;
 	margin-top: 1%;
-	height: 8%;
+	height: 61px;
 }
 
 .menu .nav {
@@ -159,8 +165,11 @@ nav .close:hover {
 
 .last {
 	width: 100%;
-	min-width: 500px !important;
-	min-height: 450px;
+	min-width: 330px !important;
+	height: calc(100% - 61px);
+	min-height: 300px;
+	position: absolute;
+	bottom: 0;
 }
 
 .content {
@@ -209,7 +218,7 @@ nav .close:hover {
 
 .main {
 	opacity: 0.8;
-	height: 92%;
+	height: 77%;
 }
 
 .main div.number:hover {
@@ -233,10 +242,6 @@ sup {
 
 	.left-column {
 		margin-right: 0;
-	}
-
-	.last {
-		height: 78%;
 	}
 
 	.content {
@@ -296,10 +301,6 @@ sup {
 		margin-right: 0;
 	}
 
-	.last {
-		height: 78%;
-	}
-
 	.content {
 		justify-content: space-between;
 		width: 60%;
@@ -356,10 +357,6 @@ sup {
 		display: none;
 	}
 
-	.last {
-		height: 78%;
-	}
-
 	.content {
 		justify-content: space-between;
 		width: 60%;
@@ -411,10 +408,6 @@ sup {
 	.right-column,
 	.row .screen {
 		display: block;
-	}
-
-	.last {
-		height: 72%;
 	}
 
 	.main {
@@ -482,6 +475,7 @@ sup {
 	direction: rtl;
 	margin-top: 5%;
 	height: 10%;
+	width: 100%;
 }
 
 .result span.number {
