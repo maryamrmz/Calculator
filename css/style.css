@@ -140,6 +140,15 @@ nav .close:hover {
 	margin-left: 4px;
 }
 
+.menu .history-icon {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.menu .history-icon img {
+	width: 25%;
+}
+
 .list {
 	margin-right: 20%;
 	width: 70%;
@@ -353,7 +362,8 @@ sup {
 		display: block;
 	}
 
-	.row .screen {
+	.row .screen,
+	.menu .history-icon {
 		display: none;
 	}
 
@@ -408,6 +418,10 @@ sup {
 	.right-column,
 	.row .screen {
 		display: block;
+	}
+
+	.menu .history-icon {
+		display: none;
 	}
 
 	.main {
