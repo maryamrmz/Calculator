@@ -37,7 +37,7 @@ function getNumber(e) {
     }
 }
 
-function getDecimal(e) {
+function getDecimal() {
     document.getElementById("input").value += ".";
 }
 
@@ -79,12 +79,16 @@ function getOperation(operation) {
                 showRes.value = "= " + Math.pow(showRes.value, 3);
             }
             break;
+        case "inverse":
+            if (showRes.value != "") {
+                showRes.value = "= " + 1 / showRes.value;
+            }
     }
 }
 
 function complete() {
     var showRes = document.getElementById("input"),
-        answer = Math.floor(+eval(showRes.value));
+        answer = Math.max(+eval(showRes.value));
     showRes.value = "= " + answer;
 }
 
