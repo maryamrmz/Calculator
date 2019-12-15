@@ -1,10 +1,16 @@
-const showRes = document.getElementById("input");
-const showAns = document.getElementById("answer");
-const navigation = document.querySelector(".navigation");
+// define Variables
+const showRes = document.getElementById("input"),
+    showAns = document.getElementById("answer"),
+    navigation = document.querySelector(".navigation");
 
 // Get numbers
 function getNumber(e) {
-    if (showRes.value.includes("NaN") || showRes.value.includes("Infinity"))
+    if (
+        showRes.value.includes("NaN") ||
+        showRes.value.includes("Infinity") ||
+        showRes.value.includes("undefined") ||
+        showRes.value == 0
+    )
         showRes.value = "";
 
     switch (e) {
@@ -48,12 +54,12 @@ function getDecimal() {
 
 // Clear input
 function clearInput() {
-    showRes.value = "";
+    showRes.value = 0;
 }
 
 // Clear Screen
 function clearScreen() {
-    showRes.value = "";
+    showRes.value = 0;
     showAns.innerHTML = "";
 }
 
