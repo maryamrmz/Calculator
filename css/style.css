@@ -357,7 +357,7 @@ sup {
 }
 
 .navigation ul li.about {
-    padding: 35px 0;
+    margin: 35px 0;
 }
 
 @media screen and (max-width: 500px) {
