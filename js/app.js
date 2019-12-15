@@ -1,7 +1,7 @@
 function getNumber(e) {
     var showRes = document.getElementById("input");
 
-    if (showRes.value.includes("=")) return (showRes.value = "");
+    if (showRes.value.includes("=")) showRes.value = "";
 
     switch (e) {
         case 1:
