@@ -2,11 +2,7 @@
 function getNumber(e) {
     var showRes = document.getElementById("input");
 
-    if (
-        showRes.value.includes("=") ||
-        showRes.value.includes("NaN") ||
-        showRes.value.includes("Infinity")
-    )
+    if (showRes.value.includes("NaN") || showRes.value.includes("Infinity"))
         showRes.value = "";
 
     switch (e) {
@@ -84,25 +80,25 @@ function getOperation(operation) {
             break;
         case "root":
             if (showRes.value != "") {
-                showAns.innerHTML = "√" + showRes.value;
+                showAns.innerHTML = "sqrt" + `(${showRes.value})`;
                 showRes.value = Math.sqrt(showRes.value);
             }
             break;
         case "pow":
             if (showRes.value != "") {
-                showAns.innerHTML = "sqr" + "(" + showRes.value + ")";
+                showAns.innerHTML = "sqr" + `(${showRes.value})`;
                 showRes.value = Math.pow(showRes.value, 2);
             }
             break;
         case "cube":
             if (showRes.value != "") {
-                showAns.innerHTML = "cube" + "(" + showRes.value + ")";
+                showAns.innerHTML = "cube" + `(${showRes.value})`;
                 showRes.value = Math.pow(showRes.value, 3);
             }
             break;
         case "inverse":
             if (showRes.value != "") {
-                showAns.innerHTML = "reciproc" + "(" + showRes.value + ")";
+                showAns.innerHTML = "reciproc" + `(${showRes.value})`;
                 showRes.value = 1 / showRes.value;
             }
     }
