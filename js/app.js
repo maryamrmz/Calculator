@@ -1,6 +1,7 @@
 function getNumber(e) {
     var showRes = document.getElementById("input");
-    showRes.value == "";
+
+    if (showRes.value.includes("=")) return (showRes.value = "");
 
     switch (e) {
         case 1:
@@ -36,8 +37,11 @@ function getNumber(e) {
     }
 }
 
+function getDecimal(e) {
+    document.getElementById("input").value += ".";
+}
+
 function clearScreen() {
-    document.getElementById("input").value = 0;
     document.getElementById("input").value = "";
 }
 
@@ -45,19 +49,35 @@ function getOperation(operation) {
     var showRes = document.getElementById("input");
     switch (operation) {
         case "+":
-            showRes.value += " + ";
+            showRes.value += "+";
             break;
         case "-":
-            showRes.value += " - ";
+            showRes.value += "-";
             break;
         case "*":
-            showRes.value += " * ";
+            showRes.value += "*";
             break;
         case "/":
-            showRes.value += " / ";
+            showRes.value += "/";
             break;
         case "+/-":
-            showRes.value += " - " + showRes.value;
+            showRes.value += "-" + showRes.value;
+            break;
+        case "√":
+            if (showRes.value != "") {
+                showRes.value =
+                    "√" + showRes.value + "= " + Math.sqrt(showRes.value);
+            }
+            break;
+        case "pow":
+            if (showRes.value != "") {
+                showRes.value = "= " + Math.pow(showRes.value, 2);
+            }
+            break;
+        case "cube":
+            if (showRes.value != "") {
+                showRes.value = "= " + Math.pow(showRes.value, 3);
+            }
             break;
     }
 }

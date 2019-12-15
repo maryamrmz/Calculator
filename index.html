@@ -37,17 +37,17 @@
                         </li>
                         <li title="Standard">
                             <a href="#"
-                                ><img
-                                    src="./images/standard.jpg"
-                                    alt=""
-                                /><span>Standard</span></a
+                                ><img src="./images/standard.jpg" alt="" /><span
+                                    >Standard</span
+                                ></a
                             >
                         </li>
                         <li title="Scientific">
                             <a href="#"
-                                ><img src="./images/scientific.jpg" alt="" /><span
-                                    >Scientific</span
-                                ></a
+                                ><img
+                                    src="./images/scientific.jpg"
+                                    alt=""
+                                /><span>Scientific</span></a
                             >
                         </li>
                         <li title="Programmer">
@@ -201,11 +201,16 @@
                     <div class="main">
                         <div class="row big-screen">
                             <div>%</div>
-                            <div>√x</div>
-                            <div class="sup" onclick="getOperation('')">
+                            <div onclick="getOperation('√')">√x</div>
+                            <div class="sup" onclick="getOperation('pow')">
                                 x<sup>2</sup>
                             </div>
-                            <div class="screen sup">x<sup>3</sup></div>
+                            <div
+                                class="screen sup"
+                                onclick="getOperation('cube')"
+                            >
+                                x<sup>3</sup>
+                            </div>
                             <div>1⁄x</div>
                         </div>
                         <div class="big-screen-row">

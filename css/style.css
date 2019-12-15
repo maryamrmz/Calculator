@@ -261,6 +261,7 @@ sup {
 }
 
 .result input.number {
+    width: 100%;
     font-size: 40px;
     background: none;
     outline: none;
