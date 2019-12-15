@@ -81,7 +81,7 @@ function getOperation(operation) {
             showRes.value += "/";
             break;
         case "+/-":
-            showRes.value += "-" + showRes.value;
+            showRes.value = showRes.value * -1;
             break;
         case "root":
             if (showRes.value != "") {
