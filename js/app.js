@@ -1,7 +1,9 @@
+const showRes = document.getElementById("input");
+const showAns = document.getElementById("answer");
+const navigation = document.querySelector(".navigation");
+
 // Get numbers
 function getNumber(e) {
-    var showRes = document.getElementById("input");
-
     if (showRes.value.includes("NaN") || showRes.value.includes("Infinity"))
         showRes.value = "";
 
@@ -41,25 +43,22 @@ function getNumber(e) {
 
 // Get decimal numbers
 function getDecimal() {
-    document.getElementById("input").value += ".";
+    showRes.value += ".";
 }
 
 // Clear input
 function clearInput() {
-    document.getElementById("input").value = "";
+    showRes.value = "";
 }
 
 // Clear Screen
 function clearScreen() {
-    document.getElementById("input").value = "";
-    document.getElementById("answer").innerHTML = "";
+    showRes.value = "";
+    showAns.innerHTML = "";
 }
 
 // Get operation
 function getOperation(operation) {
-    var showRes = document.getElementById("input"),
-        showAns = document.getElementById("answer");
-
     if (showRes.value.includes("=")) showRes.value = "";
 
     switch (operation) {
@@ -106,19 +105,18 @@ function getOperation(operation) {
 
 // Get compute
 function computed() {
-    var showRes = document.getElementById("input"),
-        answer = Math.max(+eval(showRes.value));
-    document.getElementById("answer").innerHTML = showRes.value;
+    var answer = Math.max(+eval(showRes.value));
+    showAns.innerHTML = showRes.value;
     showRes.value = answer;
 }
 
 // Show navigation
 function showNav() {
-    document.querySelector(".navigation").style.display = "block";
-    document.querySelector(".navigation").style.marginTop = "20px";
+    navigation.style.display = "block";
+    navigation.style.marginTop = "20px";
 }
 
 // Hide navigation
 function hideNav() {
-    document.querySelector(".navigation").style.display = "none";
+    navigation.style.display = "none";
 }
