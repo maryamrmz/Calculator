@@ -47,6 +47,9 @@ function clearScreen() {
 
 function getOperation(operation) {
     var showRes = document.getElementById("input");
+
+    if (showRes.value.includes("=")) showRes.value = "";
+
     switch (operation) {
         case "+":
             showRes.value += "+";
@@ -86,7 +89,7 @@ function getOperation(operation) {
     }
 }
 
-function complete() {
+function computed() {
     var showRes = document.getElementById("input"),
         answer = Math.max(+eval(showRes.value));
     showRes.value = "= " + answer;
