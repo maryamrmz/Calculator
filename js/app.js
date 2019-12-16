@@ -58,8 +58,8 @@ function clearScreen() {
     showAns.innerHTML = "";
 }
 
-// Get operation
-function getOperation(operation) {
+// Get operands
+function getOperand(operation) {
     if (showRes.value.includes("=")) showRes.value = "";
 
     switch (operation) {
@@ -99,7 +99,7 @@ function getOperation(operation) {
             break;
         case "inverse":
             if (showRes.value != "") {
-                showAns.innerHTML = `1/(${showRes.value})`;
+                showAns.innerHTML = `1 / (${showRes.value})`;
                 showRes.value = 1 / showRes.value;
             }
             break;
@@ -121,13 +121,23 @@ function computed() {
     showRes.value = answer;
 }
 
+// Get percent
+function getPercent() {
+    if (showAns.innerHTML != "") {
+        showRes.value = showRes.value / 100;
+        showAns.innerHTML = showRes.value;
+    }
+}
+
 // Show navigation
 function showNav() {
-    navigation.style.display = "block";
+    navigation.style.width = "214px";
+    navigation.style.padding = "15px";
     navigation.style.marginTop = "20px";
 }
 
 // Hide navigation
 function hideNav() {
-    navigation.style.display = "none";
+    navigation.style.width = "0";
+    navigation.style.padding = "0";
 }

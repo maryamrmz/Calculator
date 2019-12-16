@@ -46,9 +46,9 @@
                         />
                     </a>
                     <ul>
-                        <li class="header calculator">
+                        <h4 class="header calculator">
                             <span>Calculator</span>
-                        </li>
+                        </h4>
                         <li title="Standard">
                             <a href="#"
                                 ><img
@@ -77,9 +77,9 @@
                                 /><span>Data Calculation</span></a
                             >
                         </li>
-                        <li class="header">
+                        <h4 class="header">
                             <span>Converter</span>
-                        </li>
+                        </h4>
                         <li title="Currency">
                             <a href="#"
                                 ><img
@@ -211,27 +211,27 @@
                     </div>
                     <div class="main">
                         <div class="row big-screen">
-                            <div>%</div>
-                            <div onclick="getOperation('root')">√x</div>
-                            <div class="sup" onclick="getOperation('pow')">
+                            <div onclick="getPercent('%')">%</div>
+                            <div onclick="getOperand('root')">√x</div>
+                            <div class="sup" onclick="getOperand('pow')">
                                 x<sup>2</sup>
                             </div>
                             <div
                                 class="screen sup"
-                                onclick="getOperation('cube')"
+                                onclick="getOperand('cube')"
                             >
                                 x<sup>3</sup>
                             </div>
-                            <div onclick="getOperation('inverse')">1⁄x</div>
+                            <div onclick="getOperand('inverse')">1⁄x</div>
                         </div>
                         <div class="big-screen-row">
                             <div class="row">
                                 <div onclick="clearScreen()">CE</div>
                                 <div onclick="clearScreen()">C</div>
-                                <div class="rotate" onclick="getOperation('⌦')">
+                                <div class="rotate" onclick="getOperand('⌦')">
                                     ⌦
                                 </div>
-                                <div class="blue" onclick="getOperation('/')">
+                                <div class="blue" onclick="getOperand('/')">
                                     ÷
                                 </div>
                             </div>
@@ -245,7 +245,7 @@
                                 <div class="number" onclick="getNumber(9)">
                                     9
                                 </div>
-                                <div class="blue" onclick="getOperation('*')">
+                                <div class="blue" onclick="getOperand('*')">
                                     ×
                                 </div>
                             </div>
@@ -259,7 +259,7 @@
                                 <div class="number" onclick="getNumber(6)">
                                     6
                                 </div>
-                                <div class="blue" onclick="getOperation('-')">
+                                <div class="blue" onclick="getOperand('-')">
                                     –
                                 </div>
                             </div>
@@ -273,12 +273,12 @@
                                 <div class="number" onclick="getNumber(3)">
                                     3
                                 </div>
-                                <div class="blue" onclick="getOperation('+')">
+                                <div class="blue" onclick="getOperand('+')">
                                     +
                                 </div>
                             </div>
                             <div class="row">
-                                <div onclick="getOperation('+/-')">±</div>
+                                <div onclick="getOperand('+/-')">±</div>
                                 <div class="number" onclick="getNumber(0)">
                                     0
                                 </div>
