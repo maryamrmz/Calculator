@@ -102,6 +102,15 @@ function getOperation(operation) {
                 showAns.innerHTML = `1/(${showRes.value})`;
                 showRes.value = 1 / showRes.value;
             }
+            break;
+        case "⌦":
+            if (showRes.value != "") {
+                showRes.value = showRes.value.substring(
+                    0,
+                    showRes.value.length - 1
+                );
+            }
+            break;
     }
 }
 
