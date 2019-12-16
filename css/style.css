@@ -253,20 +253,23 @@ sup {
 }
 
 .result {
-    display: flex;
-    justify-content: flex-end;
     margin-top: 2%;
     height: 10%;
     width: 100%;
 }
 
-.result input.number {
+#input {
     width: 100%;
     font-size: 40px;
     background: none;
     outline: none;
     border: none;
     text-align: end;
+}
+
+#answer {
+    text-align: end;
+    font-size: 13px;
 }
 
 .rotate {

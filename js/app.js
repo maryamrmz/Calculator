@@ -1,4 +1,4 @@
-// define Variables
+// Define Variables
 const showRes = document.getElementById("input"),
     showAns = document.getElementById("answer"),
     navigation = document.querySelector(".navigation");
@@ -52,11 +52,6 @@ function getDecimal() {
     showRes.value += ".";
 }
 
-// Clear input
-function clearInput() {
-    showRes.value = 0;
-}
-
 // Clear Screen
 function clearScreen() {
     showRes.value = 0;
@@ -69,41 +64,42 @@ function getOperation(operation) {
 
     switch (operation) {
         case "+":
-            showRes.value += "+";
+            showRes.value += " + ";
             break;
         case "-":
-            showRes.value += "-";
+            showRes.value += " - ";
             break;
         case "*":
-            showRes.value += "*";
+            showRes.value += " * ";
             break;
         case "/":
-            showRes.value += "/";
+            showRes.value += " / ";
             break;
         case "+/-":
+            showAns.innerHTML = `negate(${showRes.value})`;
             showRes.value = showRes.value * -1;
             break;
         case "root":
             if (showRes.value != "") {
-                showAns.innerHTML = "sqrt" + `(${showRes.value})`;
+                showAns.innerHTML = `√(${showRes.value})`;
                 showRes.value = Math.sqrt(showRes.value);
             }
             break;
         case "pow":
             if (showRes.value != "") {
-                showAns.innerHTML = "sqr" + `(${showRes.value})`;
+                showAns.innerHTML = `sqrt(${showRes.value})`;
                 showRes.value = Math.pow(showRes.value, 2);
             }
             break;
         case "cube":
             if (showRes.value != "") {
-                showAns.innerHTML = "cube" + `(${showRes.value})`;
+                showAns.innerHTML = `cube(${showRes.value})`;
                 showRes.value = Math.pow(showRes.value, 3);
             }
             break;
         case "inverse":
             if (showRes.value != "") {
-                showAns.innerHTML = "reciproc" + `(${showRes.value})`;
+                showAns.innerHTML = `1/(${showRes.value})`;
                 showRes.value = 1 / showRes.value;
             }
     }
@@ -112,7 +108,7 @@ function getOperation(operation) {
 // Get compute
 function computed() {
     var answer = Math.max(+eval(showRes.value));
-    showAns.innerHTML = showRes.value;
+    showAns.innerHTML = `${showRes.value} = `;
     showRes.value = answer;
 }
 
