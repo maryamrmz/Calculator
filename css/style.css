@@ -247,7 +247,7 @@ sup {
 }
 
 .main div.number {
-    background-color: white;
+    background-color: #fff !important;
     font-weight: bold;
     font-size: 22px;
 }
@@ -288,7 +288,7 @@ sup {
     background: #ececec;
     overflow-y: scroll;
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: 0.5s linear;
 }
 
 .navigation a.closeNav {
@@ -313,7 +313,7 @@ sup {
 }
 
 .navigation ul .header.calculator {
-    margin-top: 30%;
+    margin-top: 10%;
 }
 
 .navigation ul .header span {
@@ -327,14 +327,12 @@ sup {
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
+    padding: 12px 0;
+    min-width: 190px;
 }
 
 .navigation ul li:hover {
     background: #dbdbdb;
-}
-
-.navigation ul li {
-    padding: 12px 0;
 }
 
 .navigation ul li a {

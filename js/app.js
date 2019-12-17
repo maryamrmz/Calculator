@@ -60,20 +60,25 @@ function clearScreen() {
 
 // Get operands
 function getOperand(operation) {
-    if (showRes.value.includes("=")) showRes.value = "";
-
     switch (operation) {
         case "+":
             showRes.value += " + ";
+            showAns.innerHTML = showRes.value;
             break;
         case "-":
             showRes.value += " - ";
+            showAns.innerHTML = showRes.value;
+
             break;
         case "*":
             showRes.value += " * ";
+            showAns.innerHTML = showRes.value;
+
             break;
         case "/":
             showRes.value += " / ";
+            showAns.innerHTML = showRes.value;
+
             break;
         case "+/-":
             showAns.innerHTML = `negate(${showRes.value})`;
