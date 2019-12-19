@@ -144,8 +144,6 @@ function getPercent() {
 // Show navigation
 function showNav() {
     navigation.style.width = "214px";
-    navigation.style.padding = "15px";
-    navigation.style.marginTop = "20px";
 }
 
 // Hide navigation
