@@ -44,12 +44,11 @@ function getNumber(e) {
         case 0:
             showRes.value += 0;
             break;
+        case ".":
+            if (!showRes.value.includes(".")) {
+                showRes.value += ".";
+            }
     }
-}
-
-// Get decimal numbers
-function getDecimal() {
-    showRes.value += ".";
 }
 
 // Clear Screen
@@ -64,6 +63,7 @@ function getOperand(operation) {
         case "+":
             showRes.value += " + ";
             showAns.innerHTML = showRes.value;
+            showRes.value = "";
             break;
         case "-":
             showRes.value += " - ";
@@ -128,9 +128,16 @@ function computed() {
 
 // Get percent
 function getPercent() {
-    if (showAns.innerHTML != "") {
+    if (
+        (showAns.innerHTML != "" && showAns.innerHTML.includes("=")) ||
+        showAns.innerHTML.includes("√") ||
+        showAns.innerHTML.includes("sqrt") ||
+        showAns.innerHTML.includes("cube")
+    ) {
         showRes.value = showRes.value / 100;
         showAns.innerHTML = showRes.value;
+    } else {
+        showRes.value = 0;
     }
 }
 

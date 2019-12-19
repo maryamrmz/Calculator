@@ -23,8 +23,8 @@ body {
     background-color: gainsboro;
     font-family: Arial, Helvetica, sans-serif, "Segoe UI";
     font-size: 18px;
-    height: 100%;
-    overflow: hidden;
+    height: 99.5%;
+    border: 1px solid black;
 }
 
 .first {
@@ -37,6 +37,7 @@ body {
 .first p {
     font-size: 12px;
     font-weight: bold;
+    padding-left: 7px;
 }
 
 .container {
@@ -117,6 +118,7 @@ nav .close:hover {
     flex-direction: row;
     margin-top: 1%;
     height: 61px;
+    padding: 0 7px;
 }
 
 .menu .nav {
@@ -142,7 +144,7 @@ nav .close:hover {
 }
 
 .menu .history-icon {
-    display: flex;
+    display: none;
     justify-content: flex-end;
 }
 
@@ -191,7 +193,7 @@ nav .close:hover {
     width: 40%;
     height: 8%;
     position: absolute;
-    top: 15%;
+    top: 22%;
 }
 
 .content div {
@@ -216,7 +218,7 @@ nav .close:hover {
     font-family: inherit;
     width: 100%;
     opacity: 0.8;
-    height: 77%;
+    height: 70%;
     position: absolute;
     bottom: 0;
 }
@@ -255,7 +257,7 @@ sup {
 .result {
     margin-top: 2%;
     height: 10%;
-    width: 100%;
+    padding-right: 7px;
 }
 
 #input {
@@ -270,6 +272,7 @@ sup {
 #answer {
     text-align: end;
     font-size: 13px;
+    padding-right: 7px;
 }
 
 .rotate {
@@ -288,13 +291,14 @@ sup {
     background: #ececec;
     overflow-y: scroll;
     overflow-x: hidden;
-    transition: 0.5s linear;
+    transition: 0.25s linear;
 }
 
 .navigation a.closeNav {
     position: absolute;
     left: 0;
     top: 11px;
+    left: 7px;
 }
 
 .navigation a.closeNav img {
@@ -363,6 +367,10 @@ sup {
         display: none;
     }
 
+    .menu .history-icon {
+        display: flex;
+    }
+
     .left-column {
         margin-right: 0;
     }
@@ -376,9 +384,9 @@ sup {
         width: 14%;
     }
 
-    .row {
+    .row.big-screen {
         display: flex;
-        height: 20%;
+        height: 16.66%;
         width: 100%;
     }
 
@@ -415,7 +423,6 @@ sup {
 }
 
 @media screen and (min-width: 500px) {
-    .right-column,
     .row .screen {
         display: none;
     }
@@ -435,8 +442,12 @@ sup {
 
     .row {
         display: flex;
-        height: 20%;
+        height: 16.66%;
         width: 100%;
+    }
+
+    .big-screen-row .row {
+        height: 20%;
     }
 
     .row div {
@@ -467,7 +478,15 @@ sup {
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 80%;
+        height: 83.34%;
+    }
+
+    .main {
+        height: 76%;
+    }
+
+    .content {
+        top: 16%;
     }
 }
 
@@ -496,7 +515,7 @@ sup {
 
     .row {
         display: flex;
-        height: 20%;
+        height: 16.66%;
         width: 100%;
     }
 
@@ -528,7 +547,15 @@ sup {
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 80%;
+        height: 83.34%;
+    }
+
+    .big-screen-row .row {
+        height: 20%;
+    }
+
+    .result {
+        padding-right: 0;
     }
 }
 
@@ -598,6 +625,10 @@ sup {
         justify-content: center;
         font-size: 18px;
         font-weight: 80;
+    }
+
+    .big-screen-row .row {
+        height: 20%;
     }
 }
 
