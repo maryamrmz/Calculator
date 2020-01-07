@@ -113,6 +113,55 @@ nav .close:hover {
     font-weight: bold;
 }
 
+.historyLi {
+    display: none;
+    margin: 10px 0;
+    padding: 10px 0;
+    height: 75%;
+    overflow-y: auto !important;
+}
+
+.historyLi #input {
+    width: 96%;
+    padding-bottom: 30px;
+}
+
+.historyLi #answer {
+    width: 96%;
+}
+
+.memoryLi {
+    display: none;
+    margin: 10px 0;
+    padding: 10px 0;
+    height: 75%;
+    overflow-y: auto !important;
+}
+
+.memoryLi #input {
+    width: 96%;
+    padding-bottom: 30px;
+}
+
+.memoryLi #answer {
+    width: 96%;
+}
+
+.deleteHistory {
+    width: 96%;
+    direction: rtl;
+    display: none;
+    cursor: pointer;
+}
+
+.deleteHistory img:hover {
+    border: 2px solid snow;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
 .menu {
     display: flex;
     align-items: center;
@@ -173,7 +222,9 @@ nav .close:hover {
     margin-right: 20%;
 }
 
-.list li a.history {
+.list li a:active,
+.list li a:focus,
+.list li a::after {
     border-bottom: 3px solid rgb(56, 153, 245);
 }
 
@@ -273,6 +324,8 @@ sup {
 #answer {
     text-align: end;
     font-size: 13px;
+    color: gray;
+    font-weight: bold;
     padding-right: 7px;
 }
 
@@ -290,7 +343,7 @@ sup {
 }
 
 .navigation ul {
-    padding: 15px;
+    padding: 15px 0;
 }
 
 a.closeNav {

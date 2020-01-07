@@ -1,7 +1,14 @@
 // Define Variables
-const showRes = document.getElementById("input"),
+var showRes = document.getElementById("input"),
     showAns = document.getElementById("answer"),
-    navigation = document.querySelector(".navigation");
+    navigation = document.querySelector(".navigation"),
+    showHistory = document.querySelector(".historyLi"),
+    showMemory = document.querySelector(".memoryLi"),
+    p = document.querySelector(".paragraph"),
+    deleteHistory = document.querySelector(".deleteHistory"),
+    filter = 0,
+    fullPhrase = "",
+    isComputed = false;
 
 // Get numbers
 function getNumber(e) {
@@ -9,9 +16,12 @@ function getNumber(e) {
         showRes.value.includes("NaN") ||
         showRes.value.includes("Infinity") ||
         showRes.value.includes("undefined") ||
-        showRes.value == 0
-    )
+        showRes.value == 0 ||
+        isComputed
+    ) {
         showRes.value = "";
+        isComputed = false;
+    }
 
     switch (e) {
         case 1:
@@ -55,65 +65,90 @@ function getNumber(e) {
 function clearScreen() {
     showRes.value = 0;
     showAns.innerHTML = "";
+    fullPhrase = "";
 }
 
 // Get operands
 function getOperand(operation) {
+    var result = showRes.value;
+    showRes.value = "";
+    fullPhrase += result;
     switch (operation) {
         case "+":
-            showRes.value += " + ";
-            showAns.innerHTML = showRes.value;
-            showRes.value = "";
+            showAns.innerHTML = result + " + ";
+            if (showAns.innerHTML.includes("+")) {
+                showRes.value = "";
+            }
+            fullPhrase += " + ";
             break;
         case "-":
-            showRes.value += " - ";
-            showAns.innerHTML = showRes.value;
-
+            showAns.innerHTML = result + " - ";
+            if (showAns.innerHTML.includes("-")) {
+                showRes.value = "";
+            }
+            fullPhrase += " - ";
             break;
         case "*":
-            showRes.value += " * ";
-            showAns.innerHTML = showRes.value;
-
+            showAns.innerHTML = result + " * ";
+            if (showAns.innerHTML.includes("*")) {
+                showRes.value = "";
+            }
+            fullPhrase += " * ";
             break;
         case "/":
-            showRes.value += " / ";
-            showAns.innerHTML = showRes.value;
-
+            showAns.innerHTML = result + " / ";
+            if (showAns.innerHTML.includes("/")) {
+                showRes.value = "";
+            }
+            fullPhrase += " / ";
             break;
         case "+/-":
-            showAns.innerHTML = `negate(${showRes.value})`;
-            showRes.value = showRes.value * -1;
+            showAns.innerHTML = `negate(${result})`;
+            showRes.value = result * -1;
             break;
         case "root":
-            if (showRes.value != "") {
-                showAns.innerHTML = `√(${showRes.value})`;
-                showRes.value = Math.sqrt(showRes.value);
-            }
+            showAns.innerHTML = `√(${result})`;
+            showRes.value = Math.sqrt(result);
             break;
         case "pow":
-            if (showRes.value != "") {
-                showAns.innerHTML = `sqrt(${showRes.value})`;
-                showRes.value = Math.pow(showRes.value, 2);
-            }
+            showAns.innerHTML = `sqrt(${result})`;
+            showRes.value = Math.pow(result, 2);
             break;
         case "cube":
-            if (showRes.value != "") {
-                showAns.innerHTML = `cube(${showRes.value})`;
-                showRes.value = Math.pow(showRes.value, 3);
-            }
+            showAns.innerHTML = `cube(${result})`;
+            showRes.value = Math.pow(result, 3);
             break;
         case "inverse":
-            if (showRes.value != "") {
-                showAns.innerHTML = `1 / (${showRes.value})`;
-                showRes.value = 1 / showRes.value;
-            }
+            showAns.innerHTML = `1 / (${result})`;
+            showRes.value = 1 / result;
             break;
         case "⌦":
-            if (showRes.value != "") {
-                showRes.value = showRes.value.substring(
-                    0,
-                    showRes.value.length - 1
-                );
+            showRes.value = result.substring(0, result.length - 1);
+            break;
+    }
+}
+
+function list(event) {
+    switch (event) {
+        case "history":
+            filter = 0;
+            showMemory.style.display = "none";
+            if (showHistory.innerHTML != "") {
+                showHistory.style.display = "block";
+                p.style.display = "none";
+                deleteHistory.style.display = "block";
+            } else {
+                p.innerHTML = `<p>There's no history yet</p>`;
+            }
+            break;
+        case "memory":
+            filter = 1;
+            p.innerHTML = `<p>There's nothing saved in memory</p>`;
+            deleteHistory.style.display = "none";
+            showHistory.style.display = "none";
+            showMemory.style.display = "flex";
+            if (p) {
+                showMemory.style.display = "flex";
             }
             break;
     }
@@ -121,20 +156,47 @@ function getOperand(operation) {
 
 // Get compute
 function computed() {
-    var answer = Math.max(+eval(showRes.value));
-    showAns.innerHTML = `${showRes.value} = `;
+    fullPhrase += showRes.value;
+    isComputed = true;
+    var answer = Math.max(+eval(fullPhrase));
+    showAns.innerHTML = `${fullPhrase} = `;
     showRes.value = answer;
+    showHistory.innerHTML += `
+        <li id="answer">${showAns.innerHTML}</li>
+        <li id="input">${showRes.value}</li>
+    `;
+    if (showHistory.innerHTML != "") {
+        showHistory.style.display = "block";
+        deleteHistory.style.display = "block";
+    }
+
+    fullPhrase = "";
 }
+
+function deletedHistory() {
+    showHistory.innerHTML = "";
+    deleteHistory.style.display = "none";
+}
+
+function addMemory() {
+    showMemory.innerHTML += `
+        <li id="input">${showRes.value}</li>
+    `;
+}
+
+function deleteMemory(params) {}
 
 // Get percent
 function getPercent() {
+    var result = showRes.value;
+    showRes.value = "";
     if (
         (showAns.innerHTML != "" && showAns.innerHTML.includes("=")) ||
         showAns.innerHTML.includes("√") ||
         showAns.innerHTML.includes("sqrt") ||
         showAns.innerHTML.includes("cube")
     ) {
-        showRes.value = showRes.value / 100;
+        showRes.value = result / 100;
         showAns.innerHTML = showRes.value;
     } else {
         showRes.value = 0;
