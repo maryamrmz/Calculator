@@ -99,7 +99,7 @@ nav .close:hover {
     background-color: rgb(219, 16, 16);
 }
 
-.paragraph {
+.paragraphHistory {
     height: 90px;
     display: flex;
     flex-wrap: wrap;
@@ -107,7 +107,21 @@ nav .close:hover {
     font-weight: 800;
 }
 
-.paragraph p {
+.paragraphHistory p {
+    font-weight: inherit;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.paragraphMemory {
+    display: none;
+    height: 90px;
+    flex-wrap: wrap;
+    align-items: center;
+    font-weight: 800;
+}
+
+.paragraphMemory p {
     font-weight: inherit;
     font-size: 14px;
     font-weight: bold;
@@ -117,7 +131,7 @@ nav .close:hover {
     display: none;
     margin: 10px 0;
     padding: 10px 0;
-    height: 75%;
+    height: 85%;
     overflow-y: auto !important;
 }
 
@@ -134,7 +148,7 @@ nav .close:hover {
     display: none;
     margin: 10px 0;
     padding: 10px 0;
-    height: 75%;
+    height: 85%;
     overflow-y: auto !important;
 }
 
@@ -148,13 +162,26 @@ nav .close:hover {
 }
 
 .deleteHistory {
-    width: 96%;
-    direction: rtl;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
     display: none;
     cursor: pointer;
 }
 
 .deleteHistory img:hover {
+    border: 2px solid snow;
+}
+
+.deleteMemory {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    display: none;
+    cursor: pointer;
+}
+
+.deleteMemory img:hover {
     border: 2px solid snow;
 }
 
@@ -213,6 +240,7 @@ nav .close:hover {
 }
 
 .list li a {
+    cursor: pointer;
     font-weight: 80;
     color: black;
     padding-bottom: 8px;
@@ -222,9 +250,7 @@ nav .close:hover {
     margin-right: 20%;
 }
 
-.list li a:active,
-.list li a:focus,
-.list li a::after {
+.border {
     border-bottom: 3px solid rgb(56, 153, 245);
 }
 
@@ -314,7 +340,7 @@ sup {
 
 #input {
     width: 100%;
-    font-size: 40px;
+    font-size: 25px;
     background: none;
     outline: none;
     border: none;
@@ -324,8 +350,7 @@ sup {
 #answer {
     text-align: end;
     font-size: 13px;
-    color: gray;
-    font-weight: bold;
+    color: #888787;
     padding-right: 7px;
 }
 

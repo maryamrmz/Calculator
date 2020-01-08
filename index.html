@@ -208,7 +208,7 @@
                     <div class="content">
                         <div class="opacity">MC</div>
                         <div class="opacity">MR</div>
-                        <div onclick="addMemory()">M+</div>
+                        <div onclick="addedMemory()">M+</div>
                         <div onclick="deleteMemory()">M-</div>
                         <div>MS</div>
                     </div>
@@ -334,18 +334,21 @@
                         <li>
                             <a
                                 href="#"
-                                class="history"
-                                onclick="list('history')"
+                                class="history border"
+                                onclick="changePage('history')"
                                 >History</a
                             >
                         </li>
                         <li>
-                            <a href="#" onclick="list('memory')">Memory</a>
+                            <a href="#" class="memory" onclick="changePage('memory')">Memory</a>
                         </li>
                     </ul>
                 </div>
-                <div class="paragraph">
+                <div class="paragraphHistory">
                     <p class="text">There's no history yet</p>
+                </div>
+                <div class="paragraphMemory">
+                    <p>There's nothing saved in memory</p>
                 </div>
                 <ul class="historyLi"></ul>
                 <ul class="memoryLi"></ul>
@@ -356,8 +359,20 @@
                         height="20px"
                     />
                 </div>
+                <div class="deleteMemory" onclick="deletedMemory()" title="Delete Memory">
+                    <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAABmJLR0QA/wD/AP+gvaeTAAABOElEQVRoge2aTU7CUBRGj8agDJ3qoO5FJMGl6CIcuBVdgMIanKEjNwBzQsQxOGkjlKd9pZe+G/Kd5E7a9/OdvvROWrCjD4yAObCKrDkwBG4Mc5jwACyJFynXMl/DBT2ayaxLXbecPcgrzWWKemk5e5AZm6EegQw4r6gsH7s+d9Zy9i26bD/lrMb8q8D8M9uIv9wC08CGqWsKDHYR8ihT1OSv0EeBa6td7BOy4XCcKsW+kJAQzQh1uTLeut6/mQ/uHZKQdyTknRODNcpdp9wVm96vxcGdkIS8IyHvSMg7EvKOhLwjIe9IyDsS8o6EvCMh70jIO/r64J0Yoe+9p4jnq2pAjNCnQRArKrPECD0bBLHiyWKRU+CD9H+PjIGOhRDAJfCeWObCSqagA9wDb8CiBYlFvtcdNU7mBzXRDOJqCfwqAAAAAElFTkSuQmCC"
+                        width="20px"
+                        height="20px"
+                    />
+                </div>
             </div>
         </div>
+        <script src="js/variables.js"></script>
         <script src="js/app.js"></script>
+        <script src="js/clear.js"></script>
+        <script src="js/add.js"></script>
+        <script src="js/calculation.js"></script>
+        <script src="js/navigation.js"></script>
     </body>
 </html>
