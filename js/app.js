@@ -56,6 +56,7 @@ function changePage(event) {
             historyBorder.classList.add("border");
             memoryBorder.classList.remove("border");
             pHistory.style.display = "flex";
+            deleteMemory.style.display = "none";
             pMemory.style.display = "none";
             showMemory.style.display = "none";
             if (showHistory.innerHTML) {
