@@ -185,10 +185,6 @@ nav .close:hover {
     border: 2px solid snow;
 }
 
-.disabled {
-    pointer-events: none;
-}
-
 .menu {
     display: flex;
     align-items: center;
@@ -448,7 +444,7 @@ a.closeNav img:hover {
         width: 14%;
     }
 
-    .row.big-screen {
+    .row {
         display: flex;
         height: 16.66%;
         width: 100%;
@@ -482,7 +478,7 @@ a.closeNav img:hover {
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 80%;
+        height: 100%;
     }
 }
 
