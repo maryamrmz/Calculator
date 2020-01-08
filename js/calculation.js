@@ -3,33 +3,31 @@ function getOperand(operation) {
     var result = showRes.value;
     showRes.value = "";
     fullPhrase += result;
+    if (
+        showAns.innerHTML.includes("+") ||
+        showAns.innerHTML.includes("-") ||
+        showAns.innerHTML.includes("*") ||
+        showAns.innerHTML.includes("/")
+    ) {
+        showRes.value = "";
+    }
     switch (operation) {
         case "+":
             showAns.innerHTML = result + " + ";
-            if (showAns.innerHTML.includes("+")) {
-                showRes.value = "";
-            }
+
             fullPhrase += " + ";
             break;
         case "-":
             showAns.innerHTML = result + " - ";
-            if (showAns.innerHTML.includes("-")) {
-                showRes.value = "";
-            }
+
             fullPhrase += " - ";
             break;
         case "*":
             showAns.innerHTML = result + " * ";
-            if (showAns.innerHTML.includes("*")) {
-                showRes.value = "";
-            }
             fullPhrase += " * ";
             break;
         case "/":
             showAns.innerHTML = result + " / ";
-            if (showAns.innerHTML.includes("/")) {
-                showRes.value = "";
-            }
             fullPhrase += " / ";
             break;
         case "+/-":
