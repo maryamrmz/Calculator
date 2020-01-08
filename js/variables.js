@@ -2,6 +2,8 @@
 var showRes = document.getElementById("input"),
     showAns = document.getElementById("answer"),
     navigation = document.querySelector(".navigation"),
+    openNav = document.querySelector(".nav"),
+    closeNav = document.querySelector(".closeNav"),
     historyBorder = document.querySelector(".history"),
     memoryBorder = document.querySelector(".memory"),
     showHistory = document.querySelector(".historyLi"),
