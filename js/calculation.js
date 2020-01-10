@@ -1,46 +1,67 @@
 // Get operands
 function getOperand(operation) {
     var result = showRes.value;
-    showRes.value = 0;
+    showRes.value = "";
     fullPhrase += result;
     if (
-        showAns.innerHTML.includes("+") ||
-        showAns.innerHTML.includes("-") ||
-        showAns.innerHTML.includes("*") ||
-        showAns.innerHTML.includes("/") ||
         showAns.innerHTML.includes("√") ||
         showAns.innerHTML.includes("sqrt") ||
         showAns.innerHTML.includes("cube") ||
         showAns.innerHTML.includes("1 /")
     ) {
         showRes.value = "";
+        showAns.innerHTML = "";
     }
     switch (operation) {
         case "+":
-            showAns.innerHTML = result + " + ";
-            fullPhrase += " + ";
+            if (
+                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
+                    "+" ||
+                fullPhrase.charAt(fullPhrase.length - 2) !== "+"
+            ) {
+                showAns.innerHTML += result + " + ";
+                fullPhrase += " + ";
+            }
+
             break;
         case "-":
-            showAns.innerHTML = result + " - ";
-            fullPhrase += " - ";
+            if (
+                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
+                    "-" ||
+                fullPhrase.charAt(fullPhrase.length - 2) !== "-"
+            ) {
+                showAns.innerHTML += result + " - ";
+                fullPhrase += " - ";
+            }
             break;
         case "*":
-            showAns.innerHTML = result + " * ";
-            fullPhrase += " * ";
+            if (
+                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
+                    "*" ||
+                fullPhrase.charAt(fullPhrase.length - 2) !== "*"
+            ) {
+                showAns.innerHTML += result + " * ";
+                fullPhrase += " * ";
+            }
             break;
         case "/":
-            showAns.innerHTML = result + " / ";
-            fullPhrase += " / ";
+            if (
+                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
+                    "/" ||
+                fullPhrase.charAt(fullPhrase.length - 2) !== "/"
+            ) {
+                showAns.innerHTML += result + " / ";
+                fullPhrase += " / ";
+            }
             break;
         case "+/-":
-            if (result != 0) {
-                showRes.value = result * -1;
-                fullPhrase = "";
-            }
+            showRes.value = result * -1;
+            fullPhrase += showRes.value;
+            fullPhrase = "";
             break;
         case "root":
             showAns.innerHTML = `√(${result}) =`;
-            showRes.value += Math.sqrt(result);
+            showRes.value = Math.sqrt(result);
             addedHistory();
             fullPhrase = "";
             break;
@@ -63,9 +84,7 @@ function getOperand(operation) {
             addedHistory();
             break;
         case "⌦":
-            if (result != 0) {
-                showRes.value = result.substring(0, result.length - 1);
-            }
+            showRes.value = result.substring(0, result.length - 1);
             fullPhrase = "";
             break;
     }
@@ -97,4 +116,5 @@ function computed() {
     showRes.value = answer;
     addedHistory();
     fullPhrase = "";
+    showAns.innerHTML = "";
 }

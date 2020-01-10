@@ -11,7 +11,7 @@ function addedHistory() {
 }
 
 function addedMemory() {
-    if (showMemory.innerHTML === "" && showRes.value != 0) {
+    if (showMemory.innerHTML === "") {
         showMemory.innerHTML = `
         <li id="input" class="inputMemory">${showRes.value}</li>
     `;
@@ -35,7 +35,9 @@ function recallMemory() {
 }
 
 function storeMemory() {
-    showMemory.innerHTML += `
+    if (showMemory.innerHTML !== "") {
+        showMemory.innerHTML += `
         <li id="input" class="inputMemory">${showRes.value}</li>
     `;
+    }
 }

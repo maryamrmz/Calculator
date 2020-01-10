@@ -196,7 +196,6 @@ nav .close:hover {
     flex-direction: row;
     margin-top: 1%;
     height: 61px;
-    padding: 0 7px;
 }
 
 .menu .nav {
@@ -210,6 +209,7 @@ nav .close:hover {
     height: 100%;
     margin-right: 15%;
     cursor: pointer;
+    padding: 7px;
 }
 
 .menu .nav img:hover {
@@ -223,6 +223,7 @@ nav .close:hover {
 .menu .history-icon {
     display: none;
     justify-content: flex-end;
+    padding: 0 7px;
 }
 
 .menu .history-icon img {
@@ -374,13 +375,13 @@ sup {
 a.closeNav {
     position: absolute;
     left: 0;
-    top: 11px;
-    left: 7px;
+    top: 3px;
 }
 
 a.closeNav img {
     width: 25px;
     height: 24px;
+    padding: 7px;
 }
 
 a.closeNav img:hover {
@@ -483,6 +484,10 @@ a.closeNav img:hover {
         flex-direction: column;
         width: 100%;
         height: 100%;
+    }
+
+    .navigation a.closeNav {
+        top: 0;
     }
 }
 
@@ -698,7 +703,7 @@ a.closeNav img:hover {
 
 @media screen and (min-width: 600px) and (max-width: 1500px) {
     .navigation a.closeNav {
-        top: 7px;
+        top: 0;
     }
 
     .navigation a.closeNav img {
