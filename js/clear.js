@@ -5,6 +5,10 @@ function clearScreen() {
     fullPhrase = "";
 }
 
+function clearResult() {
+    showRes.value = "";
+}
+
 function deletedHistory() {
     showHistory.innerHTML = "";
     deleteHistory.style.display = "none";
@@ -15,4 +19,12 @@ function deletedMemory() {
     showMemory.innerHTML = "";
     deleteMemory.style.display = "none";
     pMemory.style.display = "flex";
+    opacity.forEach(el => {
+        el.classList.add("disabled");
+        el.classList.add("opacity");
+    });
+}
+
+function clearMemory() {
+    deletedMemory();
 }

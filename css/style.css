@@ -185,6 +185,10 @@ nav .close:hover {
     border: 2px solid snow;
 }
 
+.disabled {
+    pointer-events: none;
+}
+
 .menu {
     display: flex;
     align-items: center;

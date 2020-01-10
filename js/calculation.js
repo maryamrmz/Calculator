@@ -33,8 +33,10 @@ function getOperand(operation) {
             fullPhrase += " / ";
             break;
         case "+/-":
-            showAns.innerHTML = `negate(${result})`;
-            showRes.value = result * -1;
+            if (result != 0) {
+                showRes.value = result * -1;
+                fullPhrase = "";
+            }
             break;
         case "root":
             showAns.innerHTML = `√(${result}) =`;

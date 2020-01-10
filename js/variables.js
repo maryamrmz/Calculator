@@ -12,6 +12,7 @@ var showRes = document.getElementById("input"),
     pMemory = document.querySelector(".paragraphMemory"),
     deleteHistory = document.querySelector(".deleteHistory"),
     deleteMemory = document.querySelector(".deleteMemory"),
+    opacity = document.querySelectorAll(".opacity"),
     filter = 0,
     fullPhrase = "",
     isComputed = false;

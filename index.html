@@ -206,11 +206,11 @@
                         <input class="number" id="input" value="0" readonly />
                     </div>
                     <div class="content">
-                        <div class="opacity">MC</div>
-                        <div class="opacity">MR</div>
-                        <div onclick="addedMemory()">M+</div>
-                        <div onclick="deleteMemory()">M-</div>
-                        <div>MS</div>
+                        <div class="opacity disabled" title="Clear all memory" onclick="clearMemory()">MC</div>
+                        <div class="opacity disabled" title="Memory recall" onclick="recallMemory()">MR</div>
+                        <div onclick="addedMemory()" title="Memory add">M+</div>
+                        <div onclick="deleteMemory()" title="Memory substact">M-</div>
+                        <div title="Memory store" onclick="storeMemory()">MS</div>
                     </div>
                     <div class="main">
                         <div class="row big-screen">
@@ -229,7 +229,7 @@
                         </div>
                         <div class="big-screen-row">
                             <div class="row">
-                                <div onclick="clearScreen()">CE</div>
+                                <div onclick="clearResult()">CE</div>
                                 <div onclick="clearScreen()">C</div>
                                 <div onclick="getOperand('⌦')">
                                     <img
