@@ -1,9 +1,11 @@
+// Delete history screen
 function deletedHistory() {
     showHistory.innerHTML = "";
     deleteHistory.style.display = "none";
     pHistory.style.display = "flex";
 }
 
+// Add history screen
 function addedHistory() {
     showHistory.innerHTML += `
         <li id="answer">${showAns.innerHTML}</li>

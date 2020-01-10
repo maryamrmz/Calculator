@@ -49,6 +49,7 @@ function getNumber(e) {
     }
 }
 
+// Switch between memory and history pages
 function changePage(event) {
     switch (event) {
         case "history":
@@ -94,6 +95,7 @@ function clearScreen() {
     fullPhrase = "";
 }
 
+// Clear input
 function clearResult() {
     showRes.value = "";
 }

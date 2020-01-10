@@ -1,3 +1,4 @@
+// Delete memory screen
 function deletedMemory() {
     showMemory.innerHTML = "";
     deleteMemory.style.display = "none";
@@ -8,10 +9,12 @@ function deletedMemory() {
     });
 }
 
+// Clear memory button
 function clearMemory() {
     deletedMemory();
 }
 
+// Add memory screen
 function addedMemory() {
     if (showMemory.innerHTML === "") {
         showMemory.innerHTML = `
@@ -32,10 +35,12 @@ function addedMemory() {
     }
 }
 
+// Recall memory button
 function recallMemory() {
     showRes.value = document.querySelector(".inputMemory").innerHTML;
 }
 
+// Store memory button
 function storeMemory() {
     if (showMemory.innerHTML !== "") {
         showMemory.innerHTML += `
