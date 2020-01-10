@@ -1,7 +1,7 @@
 // Get operands
 function getOperand(operation) {
     var result = showRes.value;
-    showRes.value = "";
+    showRes.value = 0;
     fullPhrase += result;
     if (
         showAns.innerHTML.includes("+") ||
@@ -35,30 +35,36 @@ function getOperand(operation) {
         case "+/-":
             showAns.innerHTML = `negate(${result})`;
             showRes.value = result * -1;
-            addedHistory();
             break;
         case "root":
             showAns.innerHTML = `√(${result}) =`;
-            showRes.value = Math.sqrt(result);
+            showRes.value += Math.sqrt(result);
             addedHistory();
+            fullPhrase = "";
             break;
         case "pow":
             showAns.innerHTML = `sqrt(${result}) =`;
             showRes.value = Math.pow(result, 2);
+            fullPhrase = "";
             addedHistory();
             break;
         case "cube":
             showAns.innerHTML = `cube(${result}) =`;
             showRes.value = Math.pow(result, 3);
+            fullPhrase = "";
             addedHistory();
             break;
         case "inverse":
             showAns.innerHTML = `1 / (${result}) =`;
             showRes.value = 1 / result;
+            fullPhrase = "";
             addedHistory();
             break;
         case "⌦":
-            showRes.value = result.substring(0, result.length - 1);
+            if (result != 0) {
+                showRes.value = result.substring(0, result.length - 1);
+            }
+            fullPhrase = "";
             break;
     }
 }
