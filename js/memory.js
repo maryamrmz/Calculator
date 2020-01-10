@@ -1,13 +1,15 @@
-function addedHistory() {
-    showHistory.innerHTML += `
-        <li id="answer">${showAns.innerHTML}</li>
-        <li id="input">${showRes.value}</li>
-    `;
-    if (showHistory.innerHTML != "" && filter === 0) {
-        pHistory.style.display = "none";
-        showHistory.style.display = "block";
-        deleteHistory.style.display = "block";
-    }
+function deletedMemory() {
+    showMemory.innerHTML = "";
+    deleteMemory.style.display = "none";
+    pMemory.style.display = "flex";
+    opacity.forEach(el => {
+        el.classList.add("disabled");
+        el.classList.add("opacity");
+    });
+}
+
+function clearMemory() {
+    deletedMemory();
 }
 
 function addedMemory() {

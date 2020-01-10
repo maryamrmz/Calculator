@@ -86,3 +86,14 @@ function changePage(event) {
             break;
     }
 }
+
+// Clear Screen
+function clearScreen() {
+    showRes.value = 0;
+    showAns.innerHTML = "";
+    fullPhrase = "";
+}
+
+function clearResult() {
+    showRes.value = "";
+}
