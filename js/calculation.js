@@ -38,6 +38,9 @@ function getOperand(operation) {
             ) {
                 showAns.innerHTML += result + " - ";
                 fullPhrase += " - ";
+            } else if (result.includes("-")) {
+                showAns.innerHTML += result + " - ";
+                fullPhrase += " - ";
             }
             break;
         case "*":
