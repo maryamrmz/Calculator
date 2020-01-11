@@ -136,12 +136,13 @@ nav .close:hover {
     overflow-y: auto !important;
 }
 
-.historyLi #input {
+.historyLi .input {
     width: 96%;
-    padding-bottom: 30px;
+    padding-bottom: 35px;
+    padding-top: 10px;
 }
 
-.historyLi #answer {
+.historyLi .answer {
     width: 96%;
 }
 
@@ -153,12 +154,13 @@ nav .close:hover {
     overflow-y: auto !important;
 }
 
-.memoryLi #input {
+.memoryLi .input {
     width: 96%;
-    padding-bottom: 30px;
+    padding-bottom: 35px;
+    padding-top: 10px;
 }
 
-.memoryLi #answer {
+.memoryLi .answer {
     width: 96%;
 }
 
@@ -377,7 +379,21 @@ sup {
     text-align: end;
 }
 
+.input {
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: end;
+}
+
 #answer {
+    text-align: end;
+    font-size: 13px;
+    color: #888787;
+    padding-right: 7px;
+}
+
+.answer {
     text-align: end;
     font-size: 13px;
     color: #888787;

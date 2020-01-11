@@ -18,7 +18,7 @@ function clearMemory() {
 function addedMemory() {
     if (showMemory.innerHTML === "") {
         showMemory.innerHTML = `
-        <li id="input" class="inputMemory">${showRes.value}</li>
+        <li class="input inputMemory">${showRes.value}</li>
     `;
     }
     if (showMemory.innerHTML !== "") {
@@ -44,7 +44,7 @@ function recallMemory() {
 function storeMemory() {
     if (showMemory.innerHTML !== "") {
         showMemory.innerHTML += `
-        <li id="input" class="inputMemory">${showRes.value}</li>
+        <li class="input inputMemory">${showRes.value}</li>
     `;
     }
 }

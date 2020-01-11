@@ -8,8 +8,8 @@ function deletedHistory() {
 // Add history screen
 function addedHistory() {
     showHistory.innerHTML += `
-        <li id="answer" class="answer">${showAns.innerHTML}</li>
-        <li id="input" class="input">${showRes.value}</li>
+        <li class="answer">${showAns.innerHTML}</li>
+        <li class="input">${showRes.value}</li>
     `;
     if (showHistory.innerHTML != "" && filter === 0) {
         pHistory.style.display = "none";
