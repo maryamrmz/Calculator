@@ -171,13 +171,12 @@ nav .close:hover {
     padding: 0;
     font-size: 20px;
     position: absolute;
-    right: 0;
+    right: 1px;
     bottom: 1px;
-    padding: 0 7px;
 }
 
 .deleteHistory {
-    width: 50px;
+    width: 45px;
     height: 45px;
     display: flex;
     cursor: pointer;
@@ -198,13 +197,12 @@ nav .close:hover {
     padding: 0;
     font-size: 20px;
     position: absolute;
-    right: 0;
+    right: 1px;
     bottom: 1px;
-    padding: 0 7px;
 }
 
 .deleteMemory {
-    width: 50px;
+    width: 45px;
     height: 45px;
     display: flex;
     cursor: pointer;
