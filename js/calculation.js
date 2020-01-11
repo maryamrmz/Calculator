@@ -15,7 +15,6 @@ function getOperand(operation) {
     fullPhrase += result;
     switch (operation) {
         case "+":
-            deleteAll();
             if (fullPhrase.charAt(fullPhrase.length - 2) !== "+") {
                 showAns.innerHTML += result + " + ";
                 fullPhrase += " + ";
@@ -91,12 +90,7 @@ function getPercent() {
     var result = showRes.value;
     showRes.value = "";
     fullPhrase += showRes.value;
-    if (
-        showHistory.innerHTML != "" ||
-        showAns.innerHTML.includes("√") ||
-        showAns.innerHTML.includes("sqrt") ||
-        showAns.innerHTML.includes("cube")
-    ) {
+    if (showHistory.innerHTML != "") {
         showRes.value = (result / 100) * result;
         showAns.innerHTML = showRes.value;
     } else {
@@ -104,6 +98,7 @@ function getPercent() {
     }
     fullPhrase = "";
     showAns.innerHTML = "";
+    showRes.value;
 }
 
 // Get compute
