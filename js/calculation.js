@@ -17,9 +17,11 @@ function getOperand(operation) {
         case "+":
             if (
                 fullPhrase.charAt(fullPhrase.length - 2) !== "+" &&
-                fullPhrase.charAt(fullPhrase.length - 2) !== "-" &&
-                fullPhrase.charAt(fullPhrase.length - 2) !== "*" &&
-                fullPhrase.charAt(fullPhrase.length - 2) !== "/"
+                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
+                    "-" &&
+                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
+                    "*" &&
+                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !== "/"
             ) {
                 showAns.innerHTML += result + " + ";
                 fullPhrase += " + ";
@@ -27,10 +29,12 @@ function getOperand(operation) {
             break;
         case "-":
             if (
-                fullPhrase.charAt(fullPhrase.length - 2) !== "+" &&
                 fullPhrase.charAt(fullPhrase.length - 2) !== "-" &&
-                fullPhrase.charAt(fullPhrase.length - 2) !== "*" &&
-                fullPhrase.charAt(fullPhrase.length - 2) !== "/"
+                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
+                    "+" &&
+                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
+                    "*" &&
+                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !== "/"
             ) {
                 showAns.innerHTML += result + " - ";
                 fullPhrase += " - ";
@@ -38,10 +42,12 @@ function getOperand(operation) {
             break;
         case "*":
             if (
-                fullPhrase.charAt(fullPhrase.length - 2) !== "+" &&
-                fullPhrase.charAt(fullPhrase.length - 2) !== "-" &&
                 fullPhrase.charAt(fullPhrase.length - 2) !== "*" &&
-                fullPhrase.charAt(fullPhrase.length - 2) !== "/"
+                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
+                    "+" &&
+                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
+                    "-" &&
+                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !== "/"
             ) {
                 showAns.innerHTML += result + " * ";
                 fullPhrase += " * ";
@@ -49,10 +55,12 @@ function getOperand(operation) {
             break;
         case "/":
             if (
-                fullPhrase.charAt(fullPhrase.length - 2) !== "+" &&
-                fullPhrase.charAt(fullPhrase.length - 2) !== "-" &&
-                fullPhrase.charAt(fullPhrase.length - 2) !== "*" &&
-                fullPhrase.charAt(fullPhrase.length - 2) !== "/"
+                fullPhrase.charAt(fullPhrase.length - 2) !== "/" &&
+                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
+                    "+" &&
+                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
+                    "-" &&
+                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !== "*"
             ) {
                 showAns.innerHTML += result + " / ";
                 fullPhrase += " / ";
@@ -114,6 +122,7 @@ function getPercent() {
 function computed() {
     if (cases === "minusPlus") {
         fullPhrase = showAns.innerHTML;
+        showAns.innerHTML += showRes.value;
     }
     fullPhrase += showRes.value;
     isComputed = true;
