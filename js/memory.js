@@ -1,7 +1,7 @@
 // Delete memory screen
 function deletedMemory() {
     showMemory.innerHTML = "";
-    deleteMemory.style.display = "none";
+    trashMemory.style.display = "none";
     pMemory.style.display = "flex";
     opacity.forEach(el => {
         el.classList.add("disabled");
@@ -31,7 +31,7 @@ function addedMemory() {
     if (showMemory.innerHTML != "" && filter === 1) {
         pMemory.style.display = "none";
         showMemory.style.display = "block";
-        deleteMemory.style.display = "block";
+        trashMemory.style.display = "flex";
     }
 }
 

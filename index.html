@@ -352,20 +352,24 @@
                 </div>
                 <ul class="historyLi"></ul>
                 <ul class="memoryLi"></ul>
-                <div class="deleteHistory" onclick="deletedHistory()" title="Delete History">
+                <div class="trash">
+                    <div class="deleteHistory" onclick="deletedHistory()" title="Delete History">
+                        <img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFiSURBVFhH7ZetcgIxFIXXIZGVlZXIykpkJRKJ5BH6BpWVSCSyshLJIyCRlbVwvuxeJmTDbNhuVuXMnJkkJDf3b3MvVU88iZ/iT0PGrI2CufgnnsVTQ8asvYlZgZW/Df3LGNt6Vk+sRKxdutktWOM39vQGQogpgnJwL8aUdzALcCNJ9TEwkXkUuWMttnAQSaiJm+WD3dMCWfxdD7PiS8QLLVjsSaIcXkDmQsRQcqGFmWjfdE6SY69iFFMRD8SSaAiSfKO9mL1BrMgHQjIUkIVMPNwJnlVi5T8YuG0rhslJuMKXjz0b8cXNatgb8+xmHYgpcE8ADwuW+XjkfBRFgaJAUaAoUBQoClA62ex3ru8ia2EzQWsV9pFUQfbSfhmomMkKAPq2XT28wi+vBhSK1fhwL+UZmcmg9qMx/wP/CwsJSiQDy4gvB/FErL9LoRmCrKRuyAcH6OHpYhHSh5xFxp3Lq+oCJugC84p0D7wAAAAASUVORK5CYII="
+                            width="25px"
+                            height="25px"
+                        />
+                    </div>
+                </div>
+                <div class="trashMemory">
+                    <div class="deleteMemory" onclick="deletedMemory()" title="Delete Memory">
                     <img
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAABmJLR0QA/wD/AP+gvaeTAAABOElEQVRoge2aTU7CUBRGj8agDJ3qoO5FJMGl6CIcuBVdgMIanKEjNwBzQsQxOGkjlKd9pZe+G/Kd5E7a9/OdvvROWrCjD4yAObCKrDkwBG4Mc5jwACyJFynXMl/DBT2ayaxLXbecPcgrzWWKemk5e5AZm6EegQw4r6gsH7s+d9Zy9i26bD/lrMb8q8D8M9uIv9wC08CGqWsKDHYR8ihT1OSv0EeBa6td7BOy4XCcKsW+kJAQzQh1uTLeut6/mQ/uHZKQdyTknRODNcpdp9wVm96vxcGdkIS8IyHvSMg7EvKOhLwjIe9IyDsS8o6EvCMh70jIO/r64J0Yoe+9p4jnq2pAjNCnQRArKrPECD0bBLHiyWKRU+CD9H+PjIGOhRDAJfCeWObCSqagA9wDb8CiBYlFvtcdNU7mBzXRDOJqCfwqAAAAAElFTkSuQmCC"
-                        width="20px"
-                        height="20px"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFiSURBVFhH7ZetcgIxFIXXIZGVlZXIykpkJRKJ5BH6BpWVSCSyshLJIyCRlbVwvuxeJmTDbNhuVuXMnJkkJDf3b3MvVU88iZ/iT0PGrI2CufgnnsVTQ8asvYlZgZW/Df3LGNt6Vk+sRKxdutktWOM39vQGQogpgnJwL8aUdzALcCNJ9TEwkXkUuWMttnAQSaiJm+WD3dMCWfxdD7PiS8QLLVjsSaIcXkDmQsRQcqGFmWjfdE6SY69iFFMRD8SSaAiSfKO9mL1BrMgHQjIUkIVMPNwJnlVi5T8YuG0rhslJuMKXjz0b8cXNatgb8+xmHYgpcE8ADwuW+XjkfBRFgaJAUaAoUBQoClA62ex3ru8ia2EzQWsV9pFUQfbSfhmomMkKAPq2XT28wi+vBhSK1fhwL+UZmcmg9qMx/wP/CwsJSiQDy4gvB/FErL9LoRmCrKRuyAcH6OHpYhHSh5xFxp3Lq+oCJugC84p0D7wAAAAASUVORK5CYII="
+                        width="25px"
+                        height="25px"
                     />
                 </div>
-                <div class="deleteMemory" onclick="deletedMemory()" title="Delete Memory">
-                    <img
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAABmJLR0QA/wD/AP+gvaeTAAABOElEQVRoge2aTU7CUBRGj8agDJ3qoO5FJMGl6CIcuBVdgMIanKEjNwBzQsQxOGkjlKd9pZe+G/Kd5E7a9/OdvvROWrCjD4yAObCKrDkwBG4Mc5jwACyJFynXMl/DBT2ayaxLXbecPcgrzWWKemk5e5AZm6EegQw4r6gsH7s+d9Zy9i26bD/lrMb8q8D8M9uIv9wC08CGqWsKDHYR8ihT1OSv0EeBa6td7BOy4XCcKsW+kJAQzQh1uTLeut6/mQ/uHZKQdyTknRODNcpdp9wVm96vxcGdkIS8IyHvSMg7EvKOhLwjIe9IyDsS8o6EvCMh70jIO/r64J0Yoe+9p4jnq2pAjNCnQRArKrPECD0bBLHiyWKRU+CD9H+PjIGOhRDAJfCeWObCSqagA9wDb8CiBYlFvtcdNU7mBzXRDOJqCfwqAAAAAElFTkSuQmCC"
-                        width="20px"
-                        height="20px"
-                    />
-                </div>
+                </div>                
             </div>
         </div>
         <script src="js/variables.js"></script>

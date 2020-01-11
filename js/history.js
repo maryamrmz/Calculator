@@ -1,7 +1,7 @@
 // Delete history screen
 function deletedHistory() {
     showHistory.innerHTML = "";
-    deleteHistory.style.display = "none";
+    trashHistory.style.display = "none";
     pHistory.style.display = "flex";
 }
 
@@ -14,6 +14,6 @@ function addedHistory() {
     if (showHistory.innerHTML != "" && filter === 0) {
         pHistory.style.display = "none";
         showHistory.style.display = "block";
-        deleteHistory.style.display = "block";
+        trashHistory.style.display = "flex";
     }
 }

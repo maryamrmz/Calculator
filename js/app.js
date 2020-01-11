@@ -57,15 +57,15 @@ function changePage(event) {
             historyBorder.classList.add("border");
             memoryBorder.classList.remove("border");
             pHistory.style.display = "flex";
-            deleteMemory.style.display = "none";
+            trashMemory.style.display = "none";
             pMemory.style.display = "none";
             showMemory.style.display = "none";
             if (showHistory.innerHTML) {
                 showMemory.style.display = "none";
                 showHistory.style.display = "block";
                 pHistory.style.display = "none";
-                deleteHistory.style.display = "block";
-                deleteMemory.style.display = "none";
+                trashHistory.style.display = "flex";
+                trashMemory.style.display = "none";
             }
             break;
         case "memory":
@@ -74,15 +74,15 @@ function changePage(event) {
             historyBorder.classList.remove("border");
             pHistory.style.display = "none";
             pMemory.style.display = "flex";
-            deleteHistory.style.display = "none";
+            trashHistory.style.display = "none";
             showHistory.style.display = "none";
             showMemory.style.display = "flex";
             if (showMemory.innerHTML) {
                 showHistory.style.display = "none";
                 showMemory.style.display = "block";
                 pMemory.style.display = "none";
-                deleteMemory.style.display = "block";
-                deleteHistory.style.display = "none";
+                trashMemory.style.display = "flex";
+                trashHistory.style.display = "none";
             }
             break;
     }

@@ -6,6 +6,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 a,
@@ -23,7 +24,7 @@ body {
     background-color: #e8e8e8;
     font-family: Arial, Helvetica, sans-serif, "Segoe UI";
     font-size: 18px;
-    height: 99.6%;
+    height: 100%;
     border: 1px solid black;
     overflow: hidden;
 }
@@ -161,27 +162,57 @@ nav .close:hover {
     width: 96%;
 }
 
-.deleteHistory {
-    position: absolute;
-    bottom: 0;
-    right: 10px;
+.trash {
     display: none;
-    cursor: pointer;
+    width: 10%;
+    height: 45px;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;
+    font-size: 20px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 0 7px;
 }
 
-.deleteHistory img:hover {
+.deleteHistory {
+    width: 50px;
+    height: 45px;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.deleteHistory:hover {
     border: 2px solid snow;
 }
 
-.deleteMemory {
-    position: absolute;
-    bottom: 0;
-    right: 10px;
+.trashMemory {
     display: none;
-    cursor: pointer;
+    width: 10%;
+    height: 45px;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;
+    font-size: 20px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 0 7px;
 }
 
-.deleteMemory img:hover {
+.deleteMemory {
+    width: 50px;
+    height: 45px;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.deleteMemory:hover {
     border: 2px solid snow;
 }
 
@@ -205,7 +236,7 @@ nav .close:hover {
 }
 
 .menu .nav img {
-    width: 12%;
+    width: 20%;
     height: 100%;
     margin-right: 15%;
     cursor: pointer;
@@ -365,7 +396,7 @@ sup {
     overflow-y: scroll;
     overflow-x: hidden;
     transition: 0.25s linear;
-    margin-top: 20px;
+    margin-top: 17px;
 }
 
 .navigation ul {
@@ -379,8 +410,8 @@ a.closeNav {
 }
 
 a.closeNav img {
-    width: 25px;
-    height: 24px;
+    width: 45px;
+    height: 45px;
     padding: 7px;
 }
 
@@ -704,9 +735,5 @@ a.closeNav img:hover {
 @media screen and (min-width: 600px) and (max-width: 1500px) {
     .navigation a.closeNav {
         top: 0;
-    }
-
-    .navigation a.closeNav img {
-        height: 25px;
     }
 }
