@@ -15,30 +15,16 @@ function getOperand(operation) {
 
     switch (operation) {
         case "+":
-            if (
-                fullPhrase.charAt(fullPhrase.length - 2) !== "+" &&
-                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
-                    "-" &&
-                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
-                    "*" &&
-                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !== "/"
-            ) {
+            if (fullPhrase.charAt(fullPhrase.length - 2) !== "+") {
                 showAns.innerHTML += result + " + ";
                 fullPhrase += " + ";
             } else if (result.includes("-")) {
-                showAns.innerHTML += result + " - ";
-                fullPhrase += " - ";
+                showAns.innerHTML += result + " + ";
+                fullPhrase += " + ";
             }
             break;
         case "-":
-            if (
-                fullPhrase.charAt(fullPhrase.length - 2) !== "-" &&
-                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
-                    "+" &&
-                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
-                    "*" &&
-                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !== "/"
-            ) {
+            if (fullPhrase.charAt(fullPhrase.length - 2) !== "-") {
                 showAns.innerHTML += result + " - ";
                 fullPhrase += " - ";
             } else if (result.includes("-")) {
@@ -47,35 +33,21 @@ function getOperand(operation) {
             }
             break;
         case "*":
-            if (
-                fullPhrase.charAt(fullPhrase.length - 2) !== "*" &&
-                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
-                    "+" &&
-                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
-                    "-" &&
-                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !== "/"
-            ) {
+            if (fullPhrase.charAt(fullPhrase.length - 2) !== "*") {
                 showAns.innerHTML += result + " * ";
                 fullPhrase += " * ";
             } else if (result.includes("-")) {
-                showAns.innerHTML += result + " - ";
-                fullPhrase += " - ";
+                showAns.innerHTML += result + " * ";
+                fullPhrase += " * ";
             }
             break;
         case "/":
-            if (
-                fullPhrase.charAt(fullPhrase.length - 2) !== "/" &&
-                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
-                    "+" &&
-                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
-                    "-" &&
-                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !== "*"
-            ) {
+            if (fullPhrase.charAt(fullPhrase.length - 2) !== "/") {
                 showAns.innerHTML += result + " / ";
                 fullPhrase += " / ";
             } else if (result.includes("-")) {
-                showAns.innerHTML += result + " - ";
-                fullPhrase += " - ";
+                showAns.innerHTML += result + " / ";
+                fullPhrase += " / ";
             }
             break;
         case "+/-":
