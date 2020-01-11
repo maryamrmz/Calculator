@@ -25,6 +25,9 @@ function getOperand(operation) {
             ) {
                 showAns.innerHTML += result + " + ";
                 fullPhrase += " + ";
+            } else if (result.includes("-")) {
+                showAns.innerHTML += result + " - ";
+                fullPhrase += " - ";
             }
             break;
         case "-":
@@ -54,6 +57,9 @@ function getOperand(operation) {
             ) {
                 showAns.innerHTML += result + " * ";
                 fullPhrase += " * ";
+            } else if (result.includes("-")) {
+                showAns.innerHTML += result + " - ";
+                fullPhrase += " - ";
             }
             break;
         case "/":
@@ -67,6 +73,9 @@ function getOperand(operation) {
             ) {
                 showAns.innerHTML += result + " / ";
                 fullPhrase += " / ";
+            } else if (result.includes("-")) {
+                showAns.innerHTML += result + " - ";
+                fullPhrase += " - ";
             }
             break;
         case "+/-":
