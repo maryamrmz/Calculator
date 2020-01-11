@@ -21,7 +21,7 @@ html {
 }
 
 body {
-    background-color: #e8e8e8;
+    background-color: #e2e2e2;
     font-family: Arial, Helvetica, sans-serif, "Segoe UI";
     font-size: 18px;
     height: 100%;
@@ -334,7 +334,7 @@ nav .close:hover {
 }
 
 .blue:hover {
-    background-color: royalblue !important;
+    background-color: rgb(196, 193, 193) !important;
 }
 
 .row div:hover {
