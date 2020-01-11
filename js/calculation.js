@@ -15,21 +15,22 @@ function getOperand(operation) {
 
     switch (operation) {
         case "+":
-            if (fullPhrase.charAt(fullPhrase.length - 2) !== "+") {
+            if (
+                fullPhrase.charAt(fullPhrase.length - 2) !== "+" &&
+                fullPhrase.charAt(fullPhrase.length - 2) !== "-" &&
+                fullPhrase.charAt(fullPhrase.length - 2) !== "*" &&
+                fullPhrase.charAt(fullPhrase.length - 2) !== "/"
+            ) {
                 showAns.innerHTML += result + " + ";
                 fullPhrase += " + ";
-            } else if (
-                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) === "-"
-            ) {
-                fullPhrase.replace("-", "+");
-                console.log(1);
             }
             break;
         case "-":
             if (
-                // showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
-                //     "-" ||
-                fullPhrase.charAt(fullPhrase.length - 2) !== "-"
+                fullPhrase.charAt(fullPhrase.length - 2) !== "+" &&
+                fullPhrase.charAt(fullPhrase.length - 2) !== "-" &&
+                fullPhrase.charAt(fullPhrase.length - 2) !== "*" &&
+                fullPhrase.charAt(fullPhrase.length - 2) !== "/"
             ) {
                 showAns.innerHTML += result + " - ";
                 fullPhrase += " - ";
@@ -37,9 +38,10 @@ function getOperand(operation) {
             break;
         case "*":
             if (
-                // showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
-                //     "*" ||
-                fullPhrase.charAt(fullPhrase.length - 2) !== "*"
+                fullPhrase.charAt(fullPhrase.length - 2) !== "+" &&
+                fullPhrase.charAt(fullPhrase.length - 2) !== "-" &&
+                fullPhrase.charAt(fullPhrase.length - 2) !== "*" &&
+                fullPhrase.charAt(fullPhrase.length - 2) !== "/"
             ) {
                 showAns.innerHTML += result + " * ";
                 fullPhrase += " * ";
@@ -47,8 +49,9 @@ function getOperand(operation) {
             break;
         case "/":
             if (
-                // showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
-                //     "/" ||
+                fullPhrase.charAt(fullPhrase.length - 2) !== "+" &&
+                fullPhrase.charAt(fullPhrase.length - 2) !== "-" &&
+                fullPhrase.charAt(fullPhrase.length - 2) !== "*" &&
                 fullPhrase.charAt(fullPhrase.length - 2) !== "/"
             ) {
                 showAns.innerHTML += result + " / ";
@@ -56,7 +59,7 @@ function getOperand(operation) {
             }
             break;
         case "+/-":
-            minus = 1;
+            cases = "minusPlus";
             showRes.value = result * -1;
             break;
         case "root":
@@ -109,7 +112,7 @@ function getPercent() {
 
 // Get compute
 function computed() {
-    if (minus === 1) {
+    if (cases === "minusPlus") {
         fullPhrase = showAns.innerHTML;
     }
     fullPhrase += showRes.value;

@@ -11,6 +11,7 @@ var showRes = document.getElementById("input"),
     deleteHistory = document.querySelector(".deleteHistory"),
     deleteMemory = document.querySelector(".deleteMemory"),
     opacity = document.querySelectorAll(".opacity"),
+    cases = "minusPlus",
     filter = 0,
     fullPhrase = "",
     isComputed = false;
