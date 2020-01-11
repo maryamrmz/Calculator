@@ -13,16 +13,6 @@ function getOperand(operation) {
     var result = showRes.value;
     showRes.value = "";
     fullPhrase += result;
-    if (
-        showAns.innerHTML.includes("√") ||
-        showAns.innerHTML.includes("sqrt") ||
-        showAns.innerHTML.includes("cube") ||
-        showAns.innerHTML.includes("1 /")
-    ) {
-        showRes.value = "";
-        showAns.innerHTML = "";
-    }
-
     switch (operation) {
         case "+":
             deleteAll();
