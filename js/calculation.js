@@ -12,22 +12,23 @@ function getOperand(operation) {
         showRes.value = "";
         showAns.innerHTML = "";
     }
+
     switch (operation) {
         case "+":
-            if (
-                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
-                    "+" ||
-                fullPhrase.charAt(fullPhrase.length - 2) !== "+"
-            ) {
+            if (fullPhrase.charAt(fullPhrase.length - 2) !== "+") {
                 showAns.innerHTML += result + " + ";
                 fullPhrase += " + ";
+            } else if (
+                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) === "-"
+            ) {
+                fullPhrase.replace("-", "+");
+                console.log(1);
             }
-
             break;
         case "-":
             if (
-                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
-                    "-" ||
+                // showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
+                //     "-" ||
                 fullPhrase.charAt(fullPhrase.length - 2) !== "-"
             ) {
                 showAns.innerHTML += result + " - ";
@@ -36,8 +37,8 @@ function getOperand(operation) {
             break;
         case "*":
             if (
-                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
-                    "*" ||
+                // showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
+                //     "*" ||
                 fullPhrase.charAt(fullPhrase.length - 2) !== "*"
             ) {
                 showAns.innerHTML += result + " * ";
@@ -46,8 +47,8 @@ function getOperand(operation) {
             break;
         case "/":
             if (
-                showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
-                    "/" ||
+                // showAns.innerHTML.charAt(showAns.innerHTML.length - 2) !==
+                //     "/" ||
                 fullPhrase.charAt(fullPhrase.length - 2) !== "/"
             ) {
                 showAns.innerHTML += result + " / ";
@@ -55,9 +56,8 @@ function getOperand(operation) {
             }
             break;
         case "+/-":
+            minus = 1;
             showRes.value = result * -1;
-            fullPhrase += showRes.value;
-            fullPhrase = "";
             break;
         case "root":
             showAns.innerHTML = `√(${result}) =`;
@@ -109,6 +109,9 @@ function getPercent() {
 
 // Get compute
 function computed() {
+    if (minus === 1) {
+        fullPhrase = showAns.innerHTML;
+    }
     fullPhrase += showRes.value;
     isComputed = true;
     var answer = Math.max(+eval(fullPhrase));
