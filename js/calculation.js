@@ -100,17 +100,20 @@ function getOperand(operation) {
 function getPercent() {
     var result = showRes.value;
     showRes.value = "";
+    fullPhrase += showRes.value;
     if (
-        (showAns.innerHTML != "" && showAns.innerHTML.includes("=")) ||
+        showHistory.innerHTML != "" ||
         showAns.innerHTML.includes("√") ||
         showAns.innerHTML.includes("sqrt") ||
         showAns.innerHTML.includes("cube")
     ) {
-        showRes.value = result / 100;
+        showRes.value = (result / 100) * result;
         showAns.innerHTML = showRes.value;
     } else {
         showRes.value = 0;
     }
+    fullPhrase = "";
+    showAns.innerHTML = "";
 }
 
 // Get compute
