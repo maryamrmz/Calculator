@@ -172,7 +172,7 @@ nav .close:hover {
     font-size: 20px;
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 1px;
     padding: 0 7px;
 }
 
@@ -199,7 +199,7 @@ nav .close:hover {
     font-size: 20px;
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 1px;
     padding: 0 7px;
 }
 
