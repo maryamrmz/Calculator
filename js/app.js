@@ -9,7 +9,8 @@ function getNumber(e) {
     ) {
         showRes.value = "";
         isComputed = false;
-    } else if (
+    }
+    if (
         showAns.innerHTML.includes("√") ||
         showAns.innerHTML.includes("sqrt") ||
         showAns.innerHTML.includes("cube") ||
