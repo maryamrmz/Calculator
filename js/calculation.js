@@ -1,13 +1,3 @@
-function deleteAll() {
-    if (
-        showAns.innerHTML.charAt(showAns.innerHTML.length - 2).includes("-") ||
-        showAns.innerHTML.charAt(showAns.innerHTML.length - 2).includes("+") ||
-        showAns.innerHTML.charAt(showAns.innerHTML.length - 2).includes("*") ||
-        showAns.innerHTML.charAt(showAns.innerHTML.length - 2).includes("/")
-    )
-        return false;
-}
-
 // Get operands
 function getOperand(operation) {
     var result = showRes.value;
