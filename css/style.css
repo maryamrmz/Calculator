@@ -187,7 +187,7 @@ nav .close:hover {
 }
 
 .deleteHistory:hover {
-    border: 2px solid snow;
+    border: 2px solid rgb(196, 193, 193);
 }
 
 .trashMemory {
@@ -213,7 +213,7 @@ nav .close:hover {
 }
 
 .deleteMemory:hover {
-    border: 2px solid snow;
+    border: 2px solid rgb(196, 193, 193);
 }
 
 .disabled {
