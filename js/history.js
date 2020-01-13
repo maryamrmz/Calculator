@@ -1,19 +1,17 @@
-// Delete history screen
-function deletedHistory() {
-    showHistory.innerHTML = "";
-    trashHistory.style.display = "none";
-    pHistory.style.display = "flex";
-}
++(function(app) {
+    var elms = app.elements,
+        vars = app.variables;
 
-// Add history screen
-function addedHistory() {
-    showHistory.innerHTML += `
-        <li class="answer">${showAns.innerHTML}</li>
-        <li class="input">${showRes.value}</li>
+    // Add history screen
+    app.addedHistory = function() {
+        elms.showHistory.innerHTML += `
+        <li class="answer">${elms.showAns.innerHTML}</li>
+        <li class="input">${elms.showRes.value}</li>
     `;
-    if (showHistory.innerHTML != "" && filter === 0) {
-        pHistory.style.display = "none";
-        showHistory.style.display = "block";
-        trashHistory.style.display = "flex";
-    }
-}
+        if (elms.showHistory.innerHTML != "" && vars.filter === 0) {
+            elms.pHistory.style.display = "none";
+            elms.showHistory.style.display = "block";
+            elms.trashHistory.style.display = "flex";
+        }
+    };
+})(app);
