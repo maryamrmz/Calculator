@@ -68,10 +68,8 @@
     elms.changePage.forEach(page => {
         page.onclick = function changePage(event) {
             var e = event.target.innerText;
-            console.log(typeof e);
-            console.log(e);
             switch (e) {
-                case "history":
+                case "History":
                     console.log(1);
                     vars.filter = 0;
                     elms.historyBorder.classList.add("border");
@@ -88,7 +86,7 @@
                         elms.trashMemory.style.display = "none";
                     }
                     break;
-                case "memory":
+                case "Memory":
                     vars.filter = 1;
                     elms.memoryBorder.classList.add("border");
                     elms.historyBorder.classList.remove("border");
@@ -156,6 +154,15 @@
     // Clear memory button
     elms.clearMemory.onclick = function clearMemory() {
         app.deletedMemory();
+    };
+
+    // Store memory button
+    elms.storeMemory.onclick = function storeMemory() {
+        if (elms.showMemory.innerHTML !== "") {
+            elms.showMemory.innerHTML += `
+        <li class="input inputMemory">${elms.showRes.value}</li>
+    `;
+        }
     };
 
     // Clear Screen

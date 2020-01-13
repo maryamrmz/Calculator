@@ -8,13 +8,12 @@
             elms.showRes.value = "";
             vars.fullPhrase += result;
             var e = event.target.getAttribute("value");
+            var ans = elms.showAns.innerHTML;
             switch (e) {
                 case "+":
-                    console.log(
-                        typeof vars.fullPhrase.charAt(
-                            vars.fullPhrase.length - 2
-                        )
-                    );
+                    if (elms.showAns.innerHTML.match(/ - $/)) {
+                        ans.charAt(ans.length - 2).replace("-", "+");
+                    }
                     if (
                         vars.fullPhrase.charAt(vars.fullPhrase.length - 2) !==
                         "+"

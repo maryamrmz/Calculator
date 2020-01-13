@@ -11,13 +11,4 @@
             el.classList.add("opacity");
         });
     };
-
-    // Store memory button
-    function storeMemory() {
-        if (showMemory.innerHTML !== "") {
-            showMemory.innerHTML += `
-        <li class="input inputMemory">${showRes.value}</li>
-    `;
-        }
-    }
 })(app);
