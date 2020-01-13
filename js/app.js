@@ -1,6 +1,7 @@
 +(function(app) {
     var elms = app.elements,
         vars = app.variables;
+
     // Get numbers
     elms.numbers.forEach(number => {
         number.onclick = function getNumber(event) {
@@ -70,7 +71,6 @@
             var e = event.target.innerText;
             switch (e) {
                 case "History":
-                    console.log(1);
                     vars.filter = 0;
                     elms.historyBorder.classList.add("border");
                     elms.memoryBorder.classList.remove("border");
@@ -94,7 +94,6 @@
                     elms.pMemory.style.display = "flex";
                     elms.trashHistory.style.display = "none";
                     elms.showHistory.style.display = "none";
-                    elms.showMemory.style.display = "flex";
                     if (elms.showMemory.innerHTML) {
                         elms.showHistory.style.display = "none";
                         elms.showMemory.style.display = "block";
@@ -114,11 +113,31 @@
         elms.pHistory.style.display = "flex";
     };
 
+    // Delete memory screen
+    elms.deleteMemory.onclick = function deletedMemory() {
+        app.deletedMemory();
+    };
+
+    // Clear memory button
+    elms.clearMemory.onclick = function clearMemory() {
+        app.deletedMemory();
+    };
+
+    // Recall memory button
+    elms.recallMemory.onclick = function recallMemory() {
+        elms.showRes.value = document.querySelector(".inputMemory").innerHTML;
+    };
+
     // Add memory screen
     elms.addedMemory.onclick = function addedMemory() {
         if (elms.showMemory.innerHTML === "") {
             elms.showMemory.innerHTML = `
         <li class="input inputMemory">${elms.showRes.value}</li>
+        <div class="listMemory">
+            <a class="clearMemory" href="#">MC</a>
+            <a class="addedMemory" href="#">M+</a>
+            <a class="subtract" href="#">M-</a>
+        </div>
     `;
         }
         if (elms.showMemory.innerHTML !== "") {
@@ -135,25 +154,16 @@
         }
     };
 
-    // Recall memory button
-    elms.recallMemory.onclick = function recallMemory() {
-        elms.showRes.value = document.querySelector(".inputMemory").innerHTML;
-    };
-
-    // Delete memory screen
-    elms.deleteMemory.onclick = function deletedMemory() {
-        elms.showMemory.innerHTML = "";
-        elms.trashMemory.style.display = "none";
-        elms.pMemory.style.display = "flex";
-        elms.opacity.forEach(el => {
-            el.classList.add("disabled");
-            el.classList.add("opacity");
-        });
-    };
-
-    // Clear memory button
-    elms.clearMemory.onclick = function clearMemory() {
-        app.deletedMemory();
+    // Subtract Memory
+    elms.subtractMemory.onclick = function() {
+        if (elms.showMemory.innerHTML !== "") {
+            var input = document.querySelectorAll(".inputMemory");
+            input.forEach(el => {
+                var a = el.innerHTML;
+                var b = eval(a - a);
+                el.innerHTML = b;
+            });
+        }
     };
 
     // Store memory button
@@ -161,6 +171,11 @@
         if (elms.showMemory.innerHTML !== "") {
             elms.showMemory.innerHTML += `
         <li class="input inputMemory">${elms.showRes.value}</li>
+        <div class="listMemory">
+            <a class="clearMemory" href="#">MC</a>
+            <a class="addedMemory" href="#">M+</a>
+            <a class="subtract" href="#">M-</a>
+        </div>
     `;
         }
     };

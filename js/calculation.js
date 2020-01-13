@@ -1,6 +1,7 @@
 +(function(app) {
     var elms = app.elements,
         vars = app.variables;
+
     // Get operands
     elms.operations.forEach(operation => {
         operation.onclick = function getOperand(event) {
