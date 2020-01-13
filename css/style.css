@@ -444,10 +444,6 @@ sup {
     margin-left: -1px;
 }
 
-.navigation ul {
-    padding: 25px 0;
-}
-
 a.closeNav {
     position: absolute;
     left: 0;
@@ -468,7 +464,7 @@ a.closeNav img:hover {
 }
 
 .calculator {
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 .header span {
