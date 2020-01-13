@@ -192,19 +192,18 @@
         elms.showRes.value = "";
     };
 
-    document.addEventListener(
-        "click",
-        function(e) {
-            if (
-                elms.navigation != e.target &&
-                isDescendant(elms.navigation, e.target)
-            ) {
-                elms.navigation.style.width = "0";
-                elms.navigation.style.padding = "0";
-            }
-        },
-        false
-    );
+    // Close navbar when click on window
+    document.onclick = function(e) {
+        if (
+            elms.navigation != e.target &&
+            isDescendant(elms.navigation, e.target)
+        ) {
+            elms.navigation.style.width = "0";
+            elms.navigation.style.padding = "0";
+        }
+
+        return false;
+    };
 
     function isDescendant(parent, child) {
         var node = child.parentNode;
