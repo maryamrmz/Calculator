@@ -94,35 +94,4 @@
             }
         };
     });
-
-    // Get percent
-    elms.percentage.onclick = function getPercent() {
-        var result = elms.showRes.value;
-        elms.showRes.value = "";
-        vars.fullPhrase += elms.showRes.value;
-        if (elms.showHistory.innerHTML != "") {
-            elms.showRes.value = (result / 100) * result;
-            elms.showAns.innerHTML = elms.showRes.value;
-        } else {
-            elms.showRes.value = 0;
-        }
-        vars.fullPhrase = "";
-        elms.showAns.innerHTML = "";
-    };
-
-    // Get compute
-    elms.computing.onclick = function computed() {
-        if (vars.cases === "minusPlus") {
-            vars.fullPhrase = elms.showAns.innerHTML;
-            elms.showAns.innerHTML += elms.showRes.value;
-        }
-        vars.fullPhrase += elms.showRes.value;
-        vars.isComputed = true;
-        var answer = Math.max(+eval(vars.fullPhrase));
-        elms.showAns.innerHTML = `${vars.fullPhrase} = `;
-        elms.showRes.value = answer;
-        app.addedHistory();
-        vars.fullPhrase = "";
-        elms.showAns.innerHTML = "";
-    };
 })(app);
