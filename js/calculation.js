@@ -12,9 +12,6 @@
             var ans = elms.showAns.innerHTML;
             switch (e) {
                 case "+":
-                    if (elms.showAns.innerHTML.match(/ - $/)) {
-                        ans.charAt(ans.length - 2).replace("-", "+");
-                    }
                     if (
                         vars.fullPhrase.charAt(vars.fullPhrase.length - 2) !==
                         "+"
