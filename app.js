@@ -1,3 +1,4 @@
+// UI Controller
 (function(app) {
     var elms = app.elements,
         vars = app.variables;
@@ -364,5 +365,26 @@
         e.stopPropagation();
         elms.navigation.style.width = "0";
         elms.navigation.style.padding = "0";
+    };
+})(app);
+
+// App Controller
+(function(app) {
+    var elms = app.elements,
+        vars = app.variables;
+
+    // Delete memory screen
+    app.deletedMemory = function() {
+        elms.showMemory.innerHTML = "";
+        elms.trashMemory.style.display = "none";
+        elms.pMemory.style.display = "flex";
+        elms.showMemory.style.display = "none";
+        if (vars.filter === 0) {
+            elms.pMemory.style.display = "none";
+        }
+        elms.opacity.forEach(el => {
+            el.classList.add("disabled");
+            el.classList.add("opacity");
+        });
     };
 })(app);
