@@ -1,4 +1,3 @@
-// UI Controller
 (function(app) {
     var elms = app.elements,
         vars = app.variables;
