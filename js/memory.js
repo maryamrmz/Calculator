@@ -7,6 +7,7 @@
         elms.showMemory.innerHTML = "";
         elms.trashMemory.style.display = "none";
         elms.pMemory.style.display = "flex";
+        elms.showMemory.style.display = "none";
         if (vars.filter === 0) {
             elms.pMemory.style.display = "none";
         }

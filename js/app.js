@@ -111,6 +111,7 @@
         elms.showHistory.innerHTML = "";
         elms.trashHistory.style.display = "none";
         elms.pHistory.style.display = "flex";
+        elms.showHistory.style.display = "none";
     };
 
     // Delete memory screen
