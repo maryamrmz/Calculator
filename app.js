@@ -129,8 +129,8 @@
                 case "root":
                     elms.showAns.innerHTML = `√(${result})`;
                     elms.showRes.value = Math.sqrt(result);
-                    app.addedHistory();
                     vars.fullPhrase = "";
+                    app.addedHistory();
                     break;
                 case "pow":
                     elms.showAns.innerHTML = `sqrt(${result})`;
