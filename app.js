@@ -148,6 +148,7 @@
                     break;
                 case "⌦":
                     elms.showRes.value = result.substring(0, result.length - 1);
+                    vars.fullPhrase = "";
                     break;
             }
         };
@@ -171,10 +172,10 @@
     // Get compute
     elms.computing.onclick = function computed() {
         if (
-            vars.fullPhrase.includes("+") ||
-            vars.fullPhrase.includes("-") ||
-            vars.fullPhrase.includes("*") ||
-            vars.fullPhrase.includes("/")
+            elms.showAns.innerHTML.includes("+") ||
+            elms.showAns.innerHTML.includes("-") ||
+            elms.showAns.innerHTML.includes("*") ||
+            elms.showAns.innerHTML.includes("/")
         ) {
             if (vars.cases === "minusPlus") {
                 vars.fullPhrase = elms.showAns.innerHTML;
