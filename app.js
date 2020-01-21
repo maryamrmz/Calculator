@@ -148,7 +148,6 @@
                     break;
                 case "⌦":
                     elms.showRes.value = result.substring(0, result.length - 1);
-                    vars.fullPhrase = "";
                     break;
             }
         };
@@ -171,6 +170,8 @@
 
     // Get compute
     elms.computing.onclick = function computed() {
+        console.log(vars.fullPhrase);
+
         if (
             vars.fullPhrase.includes("+") ||
             vars.fullPhrase.includes("-") ||
