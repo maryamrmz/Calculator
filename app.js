@@ -71,13 +71,18 @@
             var result = elms.showRes.value;
             elms.showRes.value = "";
             vars.fullPhrase += result;
-            var e = event.target.getAttribute("value");
+            var e = event.target.getAttribute("value"),
+                condition =
+                    vars.fullPhrase.charAt(vars.fullPhrase.length - 2) !==
+                        "+" &&
+                    vars.fullPhrase.charAt(vars.fullPhrase.length - 2) !==
+                        "-" &&
+                    vars.fullPhrase.charAt(vars.fullPhrase.length - 2) !==
+                        "*" &&
+                    vars.fullPhrase.charAt(vars.fullPhrase.length - 2) !== "/";
             switch (e) {
                 case "+":
-                    if (
-                        vars.fullPhrase.charAt(vars.fullPhrase.length - 2) !==
-                        "+"
-                    ) {
+                    if (condition) {
                         elms.showAns.innerHTML += result + " + ";
                         vars.fullPhrase += " + ";
                     } else if (result.includes("-")) {
@@ -86,10 +91,7 @@
                     }
                     break;
                 case "-":
-                    if (
-                        vars.fullPhrase.charAt(vars.fullPhrase.length - 2) !==
-                        "-"
-                    ) {
+                    if (condition) {
                         elms.showAns.innerHTML += result + " - ";
                         vars.fullPhrase += " - ";
                     } else if (result.includes("-")) {
@@ -98,10 +100,7 @@
                     }
                     break;
                 case "*":
-                    if (
-                        vars.fullPhrase.charAt(vars.fullPhrase.length - 2) !==
-                        "*"
-                    ) {
+                    if (condition) {
                         elms.showAns.innerHTML += result + " * ";
                         vars.fullPhrase += " * ";
                     } else if (result.includes("-")) {
@@ -110,10 +109,7 @@
                     }
                     break;
                 case "/":
-                    if (
-                        vars.fullPhrase.charAt(vars.fullPhrase.length - 2) !==
-                        "/"
-                    ) {
+                    if (condition) {
                         elms.showAns.innerHTML += result + " / ";
                         vars.fullPhrase += " / ";
                     } else if (result.includes("-")) {
@@ -124,6 +120,7 @@
                 case "+/-":
                     cases = "minusPlus";
                     elms.showRes.value = result * -1;
+                    vars.fullPhrase += elms.showRes.value + " ";
                     break;
                 case "root":
                     elms.showAns.innerHTML = `√(${result})`;
@@ -174,18 +171,25 @@
 
     // Get compute
     elms.computing.onclick = function computed() {
-        if (vars.cases === "minusPlus") {
-            vars.fullPhrase = elms.showAns.innerHTML;
-            elms.showAns.innerHTML += elms.showRes.value;
+        if (
+            vars.fullPhrase.includes("+") ||
+            vars.fullPhrase.includes("-") ||
+            vars.fullPhrase.includes("*") ||
+            vars.fullPhrase.includes("/")
+        ) {
+            if (vars.cases === "minusPlus") {
+                vars.fullPhrase = elms.showAns.innerHTML;
+                elms.showAns.innerHTML += elms.showRes.value;
+            }
+            vars.fullPhrase += elms.showRes.value;
+            vars.isComputed = true;
+            var answer = Math.max(+eval(vars.fullPhrase));
+            elms.showAns.innerHTML = `${vars.fullPhrase} = `;
+            elms.showRes.value = answer;
+            app.addedHistory();
+            vars.fullPhrase = "";
+            elms.showAns.innerHTML = "";
         }
-        vars.fullPhrase += elms.showRes.value;
-        vars.isComputed = true;
-        var answer = Math.max(+eval(vars.fullPhrase));
-        elms.showAns.innerHTML = `${vars.fullPhrase} = `;
-        elms.showRes.value = answer;
-        app.addedHistory();
-        vars.fullPhrase = "";
-        elms.showAns.innerHTML = "";
     };
 
     // Switch between memory and history pages
